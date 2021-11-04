@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
+* {
+    box-sizing:border-box;
+    overflow-x: clip;
+    font-family: 'IBM Plex Sans', sans-serif;
+
+}
+body {
+    color: white;
+}
+.textHome{
+    font-size: 46pt;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: white;
+}
+.gloverup p{
+    color: black;
+}
+.gloverup h1 {
+    color: black;
+}
+.fundo {
+    position: absolute;
+    background-image: url(/Taurusredesign/img/694678.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+.gh{
+    height: 100vh;
+    width: 100%;
+    background-image: url(/Taurusredesign/img/694678.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.liner{
+    width: 7px;
+    height: 161px;
+    padding: 0;
+    margin: 12px 0px 0px 30px;
+}
+.liner2{
+    width: 7px;
+    height: 161px;
+    padding: 0;
+    margin: 12px 0px 0px 30px;
+}
+.bg-dark-dark{
+    background: black;
+}
+.banner{
+    width: 323px;
+    height: 692px;
+    background-color: black;
+    border-radius: 23px;
+    margin-bottom: 30px;
+    box-shadow: 2px 20px 16px -9px #000;
+}
+.banner img {
+    width: 350px;
+}
+.icp {
+    font-size: 37pt;
+}
+.atention {
+    color: #585858;
+    font-size: 15px;
+}
+.icp2{
+    font-size: 20pt;
+    color: rgb(255, 166, 0);
+}
+.atetionavise {
+    background-color: rgb(22, 22, 22);
+}
+
+.btn-white {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-color: #212529;
+}
+.btn-white:hover {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border-color: #303030;
+}
+.btn-white:active {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-color: #000000;
+}
+.btn-white:focus {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-color: #000000;
+}
+.btn-green{
+    background: rgb(0, 218, 36);
+    color: rgb(255, 255, 255);
+}
+.btn-green:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 218, 36);
+    border-color: #3aff20;
+}
+.btn-green:active {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 218, 36);
+    border-color: #3aff20;
+}
+.btn-green:focus {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 218, 36);
+    border-color: #3aff20;
+}
+/* carosel */
+
