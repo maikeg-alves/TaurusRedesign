@@ -2,6 +2,7 @@ var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
 script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);
+
 var X,Y;
 var Xtratado, Ytratado;
 
@@ -154,7 +155,7 @@ $(document).ready(function(){
         var obj = {};
 
         // Add to cart
-        obj.addItemToCart = function (name, price, count) {
+        obj.addItemToCart = function (name, price, count) { 
           for (var item in cart) {
             if (cart[item].name === name) {
               cart[item].count++;
@@ -336,7 +337,7 @@ $(document).ready(function(){
         shoppingCart.setCountForItem(name, count);
         displayCart();
       });
+
       displayCart();
       //# sourceURL=pen.js
 
-	  
