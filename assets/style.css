@@ -133,34 +133,35 @@ i {
 
 /* carrinho */
 .cart {
-    position: fixed;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
+  position: fixed;
+  right: 54px;
+  width: 19px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 59px;
+  font-size: 13px;
+  background: rgb(0 218 36);
+  color: white;
+  top: 34px;
 }
+.btn-none {
+  background: rgba(0, 0, 0, 0);
+  color: rgb(255,255, 255);
+  border: none;
+}
+.btn-n {
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+}
+
 .cart.shake {
     animation: shakeCart 0.4s ease-in-out forwards;
 }
-.cart:before {
-    content: attr(data-totalitems);
-    font-size: 12px;
-    font-weight: 600;
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    background: #2bd156;
-    line-height: 23px;
-    padding: 0 5px;
-    height: 20px;
-    min-width: 20px;
-    color: white;
-    text-align: center;
-    border-radius: 24px;
-}
+
 .cart.shake {
     animation: shakeCart 0.4s ease-in-out forwards;
 }

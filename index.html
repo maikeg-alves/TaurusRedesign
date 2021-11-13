@@ -48,6 +48,7 @@
             Close
           </button>
           <button type="button" class="btn btn-primary">Order now</button>
+          <button class="clear-cart btn btn-danger">Clear Cart</button>
         </div>
       </div>
     </div>
@@ -80,21 +81,16 @@
               <li class="nav-item active">
                 <a class="nav-link active pe-5" href="">Pricing</a>
               </li>
-              <li class="nav-item active">
-                <div class="cart nav-link active" id="cart" data-totalitems="0" >
-                  <i class="material-icons" >local_mall</i>
-                </div>
-              </li>
-              <button class="clear-cart btn btn-primary">reset</button>
               <div class="col">
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  class=" btn-n btn-none"
                   data-toggle="modal"
-                  data-target="#cart"
+                  data-target="#cart">
+                  <span class="cart total-count">0</span>
+                 <i class="material-icons"> local_mall</i> 
+                </button
                 >
-                  Cart (<span class="total-count">0</span>)</button
-                ><button class="clear-cart btn btn-danger">Clear Cart</button>
               </div>
             </div>
             </ul>
@@ -412,7 +408,7 @@
         </div>
       </div>
   </footer>
-  
+
   <!-- aviso -->
   <section class="container-fluid atetionavise">
     <div class="col-auto d-flex justify-content-center align-items-center">

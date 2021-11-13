@@ -92,7 +92,7 @@ window.onscroll = function(){
 	console.log('teste')
 }) */
 
-$(document).ready(function(){
+/* $(document).ready(function(){
 	$('.addtocart').on('click',function(){
 	  console.log('apertou')
 	  var button = $(this);
@@ -110,7 +110,7 @@ $(document).ready(function(){
 	  },1000)
 	})
   })
-
+ */
 /*   cart script  */
 
  // ************************************************
