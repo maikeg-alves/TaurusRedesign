@@ -154,7 +154,7 @@ $(document).ready(function(){
         var obj = {};
 
         // Add to cart
-        obj.addItemToCart = function (name, price, count) {
+        obj.addItemToCart = function (name, price, count) { 
           for (var item in cart) {
             if (cart[item].name === name) {
               cart[item].count++;
@@ -336,7 +336,7 @@ $(document).ready(function(){
         shoppingCart.setCountForItem(name, count);
         displayCart();
       });
+
       displayCart();
       //# sourceURL=pen.js
 
-	  
