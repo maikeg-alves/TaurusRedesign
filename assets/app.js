@@ -114,7 +114,7 @@ window.onscroll = function(){
 /*   cart script  */
 
  // ************************************************
-      // Shopping Cart API
+      // Shopping Cart APIas
       // ************************************************
 
       var shoppingCart = (function () {
