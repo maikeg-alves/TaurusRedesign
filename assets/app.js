@@ -266,6 +266,9 @@ window.onscroll = function(){
         displayCart();
       });
 
+       if ( itemCopy.count === "1" ) {
+         console.error('teste')
+       } 
       // Clear items
       $(".clear-cart").click(function () {
         shoppingCart.clearCart();
