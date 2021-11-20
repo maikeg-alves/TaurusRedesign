@@ -201,6 +201,8 @@ inicializarLoja();
 atualizarCarrinho = () => {
   var containerCarrinho = document.querySelector(".modal-body");
   var valorTotaldosProdutos = document.getElementById("totalproduct")
+  valorTotaldosProdutos.innerHTML = "";
+  containerCarrinho.innerHTML = "";
   limpartudo = () => {
     valorTotaldosProdutos.innerHTML = "";
     containerCarrinho.innerHTML = "";
@@ -246,6 +248,9 @@ function contar() {
 }
 
 function zerar() {
+   items.map((val)=>{
+     val.quantidade = 0
+   })
    numero = 0
    contador.innerHTML = null
    limpartudo()
