@@ -7,23 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
     integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
     crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/16f4537d4f.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   
-  <script>
-    window.console = window.console || function (t) {};
-  </script>
+  <script src="https://kit.fontawesome.com/16f4537d4f.js" crossorigin="anonymous"></script>
 
-  <script>
-    if (document.location.search.match(/type=embed/gi)) {
-      window.parent.postMessage("resize", "*");
-    }
-  </script>
   <link rel="stylesheet" href="assets/style.css">
+  
   <title>Document</title>
 </head>
 
@@ -35,21 +28,26 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+          <h5 class="modal-title " id="exampleModalLabel">Shopping Cart</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <img src="">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">
-          <table class="show-cart table"><tr><td>Orange</td><td>(0.5)</td><td><div class="input-group"><button class="minus-item input-group-addon btn btn-primary" data-name="Orange">-</button><input type="number" class="item-count form-control" data-name="Orange" value="3"><button class="plus-item btn btn-primary input-group-addon" data-name="Orange">+</button></div></td><td><button class="delete-item btn btn-danger" data-name="Orange">X</button></td><td>1.50</td></tr></table>
-          <div>Total price: $<span class="total-cart">1.5</span></div>
+        <div class="d-flex">
+        <div class="modal-body d-flex flex-column">
+          <input type="button" value="">
         </div>
+      </div>
         <div class="modal-footer">
+          <div id="totalproduct" class="x">
+            
+          </div>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">
             Close
           </button>
           <button type="button" class="btn btn-primary">Order now</button>
-          <button class="clear-cart btn btn-danger">Clear Cart</button>
+          <button class="clear-cart btn btn-danger" onclick="zerar()">Clear Cart</button>
         </div>
       </div>
     </div>
@@ -57,7 +55,7 @@
 
   <!-- lista de itens as --> 
 
-  <!-- menu  -->
+  <!-- nav menu  -->
   <section class="gh">
     <header class="fundo">
     </header>
@@ -170,7 +168,6 @@
             <button class="btn btn-dark btn-primary rounded-pill" type="button">Detalhes</button>
           </div>
         </section>
-
         <section class="col-4 text-center bg-dark-dark">
           <p class="pt-3">fuzil de asalto</p>
           <h1>PP32</h1>
@@ -228,157 +225,11 @@
   <div class="gloverup py-4">
     <h1 class="fs-3 text-center ">Featured Products</h1>
   </div>
-  <div class="container-fluid">
+  <div class="">
     <div class="col-12 d-flex flex-column align-items-center flex-wrap">
-      <div class="row">
-        <div class="col">
+        <div class=" justify-content-center d-flex flex-wrap col-auto" id="produtos">
 
-          <ul class="row">
-            <li class="col-auto">
-              <section class="banner">
-                <h1 class="pt-3 text-center">ARMA 1</h1>
-                <img class="py-5" src="img/classic.png">
-                <p class="px-4 fs-6">T4 11,5 (FULL-AUTO)</p>
-                <p class="px-4 ">Detalhes</p>
-                <p class="col-auto pb-5 px-4 text-break">After generating your fancy text symbols, you can copy and
-                  paste the "fonts" to most websites and text processors. You
-                  could use it to generate a fancy Agario name (yep, weird text. </p>
-                <div class="d-flex align-items-center justify-content-evenly">
-
-                  <button data-name='Arma 1' data-price="100" class="add-to-cart btn btn-green btn-primary rounded-pill" type="button">Comprar</button>
-                  <button data-name='Arma 1' data-price="100" class="add-to-cart addtocart btn btn-primary rounded-pill btn-white " type="button"><i
-                      class="fas fa-plus"></i></button>
-                </div>
-              </section>
-            </li>
-
-            <li class="col-auto">
-              <section class="banner">
-                <h1 class="pt-3 text-center">ARMA 1</h1>
-                <img class="py-5" src="img/frenzy.png">
-                <p class="px-4 fs-6">T4 11,5 (FULL-AUTO)</p>
-                <p class="px-4">Detalhes</p>
-                <p class="col-auto pb-5 px-4 text-break">After generating your fancy text symbols, you can copy and
-                  paste the "fonts" to most websites and text processors. You
-                  could use it to generate a fancy Agario name (yep, weird text. </p>
-                <div class="d-flex align-items-center justify-content-evenly">
-                  <button data-name="arma 2" data-price="100" class="add-to-cart btn btn-green btn-primary rounded-pill" type="button">Comprar</button>
-                  <button data-name="arma 2" data-price="100" class="add-to-cart addtocart btn btn-primary rounded-pill btn-white " type="button"><i
-                      class="fas fa-plus"></i></button>
-                </div>
-              </section>
-            </li>
-
-            <li class="col-auto">
-              <section class="banner">
-                <h1 class="pt-3 text-center">ARMA 1</h1>
-                <img class="py-5 px-3" src="img/phantom-article.png" style="width:281px;">
-                <p class="px-4 fs-6">T4 11,5 (FULL-AUTO)</p>
-                <p class="px-4">Detalhes</p>
-                <p class="col-auto pb-5 px-4 text-break">After generating your fancy text symbols, you can copy and
-                  paste the "fonts" to most websites and text processors. You
-                  could use it to generate a fancy Agario name (yep, weird text. </p>
-                <div class="d-flex align-items-center justify-content-evenly">
-                  <button data-name="arma 3" data-price="100" class="add-to-cart btn btn-green btn-primary rounded-pill" type="button">Comprar</button>
-                  <button data-name="arma 3" data-price="100" class="add-to-cart addtocart btn btn-primary rounded-pill btn-white " type="button"><i
-                      class="fas fa-plus"></i></button>
-                </div>
-              </section>
-            </li>
-
-            <li class="col-auto">
-              <section class="banner">
-                <h1 class="pt-3 text-center">ARMA 1</h1>
-                <img class="py-5 px-4" src="img/shorty.png">
-                <p class="px-4 fs-6">T4 11,5 (FULL-AUTO)</p>
-                <p class="px-4">Detalhes</p>
-                <p class="col-auto pb-5 px-4 text-break">After generating your fancy text symbols, you can copy and
-                  paste the "fonts" to most websites and text processors. You
-                  could use it to generate a fancy Agario name (yep, weird text. </p>
-                <div class="d-flex align-items-center justify-content-evenly">
-                  <button data-name="arma 4" data-price="100" class="add-to-cart btn btn-green btn-primary rounded-pill" type="button">Comprar</button>
-                  <button data-name="arma 4" data-price="100" class="add-to-cart addtocart btn btn-primary rounded-pill btn-white " type="button"><i
-                      class="fas fa-plus"></i></button>
-                </div>
-              </section>
-            </li>
-          </ul>
-        </div>
       </div>
-
-      <div class="col">
-        <ul class="row">
-          <li class="col-auto">
-            <section class="banner">
-              <h1 class="pt-3 text-center">ARMA 1</h1>
-              <img class="py-5" src="img/classic.png">
-              <p class="px-4 fs-6">T4 11,5 (FULL-AUTO)</p>
-              <p class="px-4">Detalhes</p>
-              <p class="col-auto pb-5 px-4 text-break">After generating your fancy text symbols, you can copy and
-                paste the "fonts" to most websites and text processors. You
-                could use it to generate a fancy Agario name (yep, weird text. </p>
-              <div class="d-flex align-items-center justify-content-evenly">
-                <button data-name="arma 5" data-price="100" class="add-to-cart btn btn-green btn-primary rounded-pill" type="button">Comprar</button>
-                <button data-name="arma 5" data-price="100" class="add-to-cart addtocart btn btn-primary rounded-pill btn-white " type="button"><i
-                    class="fas fa-plus"></i></button>
-              </div>
-            </section>
-          </li>
-
-          <li class="col-auto">
-            <section class="banner">
-              <h1 class="pt-3 text-center">ARMA 1</h1>
-              <img class="py-5" src="img/frenzy.png">
-              <p class="px-4 fs-6">T4 11,5 (FULL-AUTO)</p>
-              <p class="px-4">Detalhes</p>
-              <p class="col-auto pb-5 px-4 text-break">After generating your fancy text symbols, you can copy and
-                paste the "fonts" to most websites and text processors. You
-                could use it to generate a fancy Agario name (yep, weird text. </p>
-              <div class="d-flex align-items-center justify-content-evenly">
-                <button data-name="arma 6" data-price="100" class="add-to-cart btn btn-green btn-primary rounded-pill" type="button">Comprar</button>
-                <button data-name="arma 6" data-price="100" class="add-to-cart addtocart btn btn-primary rounded-pill btn-white " type="button"><i
-                    class="fas fa-plus"></i></button>
-              </div>
-            </section>
-          </li>
-
-          <li class="col-auto">
-            <section class="banner">
-              <h1 class="pt-3 text-center">ARMA 1</h1>
-              <img class="py-5 px-3" src="img/phantom-article.png" style="width:281px;">
-              <p class="px-4 fs-6">T4 11,5 (FULL-AUTO)</p>
-              <p class="px-4">Detalhes</p>
-              <p class="col-auto pb-5 px-4 text-break">After generating your fancy text symbols, you can copy and
-                paste the "fonts" to most websites and text processors. You
-                could use it to generate a fancy Agario name (yep, weird text. </p>
-              <div class="d-flex align-items-center justify-content-evenly">
-                <button data-name="arma 7" data-price="100" class="add-to-cart btn btn-green btn-primary rounded-pill" type="button">Comprar</button>
-                <button data-name="arma 7" data-price="100" class="add-to-cart addtocart btn btn-primary rounded-pill btn-white " type="button"><i
-                    class="fas fa-plus"></i></button>
-              </div>
-            </section>
-          </li>
-
-          <li class="col-auto">
-            <section class="banner">
-              <h1 class="pt-3 text-center">ARMA 1</h1>
-              <img class="py-5 px-4" src="img/shorty.png">
-              <p class="px-4 fs-6">T4 11,5 (FULL-AUTO)</p>
-              <p class="px-4">Detalhes</p>
-              <p class="col-auto pb-5 px-4 text-break">After generating your fancy text symbols, you can copy and
-                paste the "fonts" to most websites and text processors. You
-                could use it to generate a fancy Agario name (yep, weird text. </p>
-              <div class="d-flex align-items-center justify-content-evenly">
-                <button data-name="arma 8" data-price="100" class="add-to-cart btn btn-green btn-primary rounded-pill" type="button">Comprar</button>
-                <button data-name="arma 8" data-price="100" class="add-to-cart addtocart btn btn-primary rounded-pill btn-white " type="button"><i
-                    class="fas fa-plus"></i></button>
-              </div>
-            </section>
-          </li>
-
-        </ul>
-      </div>
-    </div>
   </div>
 
   <!-- roda pé -->
@@ -420,13 +271,13 @@
   </section>
   <!-- script bootstrao -->
   
-  <script src="assets/app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
+    <script src="assets/app.js"></script>
 </body>
 
 </html>

@@ -64,7 +64,7 @@ i {
   box-shadow: 2px 20px 16px -9px #000;
 }
 .banner img {
-  width: 350px;
+  width: 300px;
 }
 .icp {
   font-size: 37pt;
@@ -129,6 +129,9 @@ i {
   -o-transition: all 1.7s 0s ease;
   transition: all 1.7s 0s ease-out;
 }
+.modal{
+  color: #000;
+}
 /* carrinho de compras */ 
 
 /* carrinho */
@@ -157,7 +160,9 @@ i {
   border: 1px solid transparent;
   padding: .375rem .75rem;
 }
-
+.cartImg {
+  width: 132px;
+}
 .cart.shake {
     animation: shakeCart 0.4s ease-in-out forwards;
 }
