@@ -95,7 +95,7 @@ const items = [
   {
     id: 0,
     nome: "Arma 1",
-    img: "img/frenzy.png",
+    img: "main/img/frenzy.png",
     quantidade: 0,
     delalhes:
       "After generating your fancy text symbols, you can copy and paste the to most websites and text processors. You could use it to generate a fancy Agario name (yep, weird text.",
