@@ -149,7 +149,7 @@ const items = [
   {
     id: 6,
     nome: "Arma 7 ",
-    img: "/img/judge.png",
+    img: "img/judge.png",
     quantidade: 0,
     price: 99,
     delalhes:
