@@ -95,7 +95,7 @@ const items = [
   {
     id: 0,
     nome: "Arma 1",
-    img: "/img/frenzy.png",
+    img: "img/frenzy.png",
     quantidade: 0,
     delalhes:
       "After generating your fancy text symbols, you can copy and paste the to most websites and text processors. You could use it to generate a fancy Agario name (yep, weird text.",
@@ -104,7 +104,7 @@ const items = [
   {
     id: 1,
     nome: "Arma 2",
-    img: "/img/classic.png",
+    img: "img/classic.png",
     quantidade: 0,
     delalhes:
       "After generating your fancy text symbols, you can copy and paste the to most websites and text processors. You could use it to generate a fancy Agario name (yep, weird text.",
@@ -113,7 +113,7 @@ const items = [
   {
     id: 2,
     nome: "Arma 3",
-    img: "/img/shorty.png",
+    img: "img/shorty.png",
     quantidade: 0,
     price: 99,
     delalhes:
@@ -131,7 +131,7 @@ const items = [
   {
     id: 4,
     nome: "Arma 5",
-    img: "/img/CA762IA2-dir.png",
+    img: "img/CA762IA2-dir.png",
     quantidade: 0,
     price: 99,
     delalhes:
@@ -140,7 +140,7 @@ const items = [
   {
     id: 5,
     nome: "Arma 6 ",
-    img: "/img/phantom-article.png",
+    img: "img/phantom-article.png",
     quantidade: 0,
     price: 99,
     delalhes:
@@ -158,7 +158,7 @@ const items = [
   {
     id: 7,
     nome: "Arma 8 ",
-    img: "/img/ump45.png",
+    img: "img/ump45.png",
     quantidade: 0,
     price: 99,
     delalhes:
