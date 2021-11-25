@@ -31,7 +31,7 @@
           <h5 class="modal-title " id="exampleModalLabel">Shopping Cart</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <img src="">
-            <span aria-hidden="true">×</span>
+            <span aria-hidden="true"><i class="material-icons"> close</i> </span>
           </button>
         </div>
         <div class="d-flex">
@@ -39,21 +39,38 @@
           <input type="button" value="">
         </div>
       </div>
-        <div class="modal-footer">
+        <div class="modal-footer justify-content-between">
           <div id="totalproduct" class="x">
-            
+
           </div>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
-            Close
-          </button>
-          <button type="button" class="btn btn-primary">Order now</button>
-          <button class="clear-cart btn btn-danger" onclick="zerar()">Clear Cart</button>
+          <button type="button" class="btn btn-primary rounded-pill">Finalizar</button>
+          <button class="clear-cart btn btn-danger rounded-pill" onclick="zerar()">Clear Cart</button>
         </div>
       </div>
     </div>
   </div>
 
   <!-- lista de itens as --> 
+
+  <!-- Modal login -->
+  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none; background-color: rgba(0, 0, 0, 0.39); transition: opacity 0.15s linear 0s;" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title " id="exampleModalLabel">login</h5>
+          <button type="button" class="closelogin" data-dismiss="modal" aria-label="Close">
+            <img src="">
+            <span aria-hidden="true"><i class="material-icons"> close</i> </span>
+          </button>
+        </div>
+
+        <form class=" col-auto d-flex flex-column align-items-center" id="login-codigo">
+
+        </form>
+        
+      </div>
+    </div>
+  </div>
 
   <!-- nav menu  -->
   <section class="gh">
@@ -75,10 +92,13 @@
                 <a class="nav-link active pe-5" href="#">Home</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link active pe-5" href="">Features</a>
+                <a class="nav-link active pe-5" href="">Sing in</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link active pe-5" href="">Pricing</a>
+                <a class="nav-link active pe-5" href="">Products</a>
+              </li>
+              <li class="nav-item active">
+                 <a class="nav-link active pe-5" href="">Contact</a>
               </li>
               <div class="col">
                 <button
@@ -213,8 +233,8 @@
           paste the "fonts" to most websites and text processors. You
           could use it to generate a fancy Agario name (yep, weird text. </p>
         <div class="d-flex col-2 align-items-center justify-content-evenly">
-          <button class="btn btn-dark btn-primary rounded-pill" type="button">Login</button>
-          <button class="btn btn-dark btn-primary rounded-pill" type="button">Criar conta</button>
+          <button class="btn btn-dark btn-primary rounded-pill" data-bs-toggle="modal" id="loginbtn">Login</button>
+          <button class="btn btn-dark btn-primary rounded-pill" type="button" id="btnCreatAccout">Criar conta</button>
         </div>
       </div>
     </div>

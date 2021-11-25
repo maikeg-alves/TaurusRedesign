@@ -13,7 +13,6 @@ i {
 .textHome {
   font-size: 46pt;
 }
-
 .navbar-light .navbar-nav .nav-link.active {
   color: white;
 }
@@ -163,12 +162,38 @@ i {
 .cartImg {
   width: 132px;
 }
+.modal-dialog {
+  width: 471px;
+}
+.modal-content {
+  background: #181818;
+  color: white;
+  border-radius: 16px;
+}
+.modal-header, .d-flex, .modal-footer{
+  border-color: #181818;
+}
+.modal-footer{
+  align-items: baseline;
+}
+.close, .closelogin {
+  background-color: #181818;
+  border: unset;
+  color: white;
+}
 .cart.shake {
     animation: shakeCart 0.4s ease-in-out forwards;
 }
 
 .cart.shake {
     animation: shakeCart 0.4s ease-in-out forwards;
+}
+.btn-colors {
+  color: #fff;
+  border-color: #0d6efd;
+}
+.btn:hover {
+  color: #ffffff;
 }
 @keyframes xAxis {
     100% {

@@ -1,80 +1,70 @@
-var script = document.createElement("script");
-script.src = "https://code.jquery.com/jquery-3.4.1.min.js";
-script.type = "text/javascript";
-document.getElementsByTagName("head")[0].appendChild(script);
 
-var X, Y;
-var Xtratado, Ytratado;
 
-function mover() {
-  traslate = "translate(" + Xtratado + "px," + Ytratado + "px)";
+// login Area //
 
-  $(".fundo").css({
-    transform: traslate,
+var codigoLogin = document.getElementById("login-codigo");
+var login = document.getElementById("login");
+var btnlogin = document.getElementById("loginbtn");
+var btnCreatAccout = document.getElementById("btnCreatAccout");
+var closelogin = document.querySelector(".closelogin");
+
+btnlogin.addEventListener("click", function () {
+  $("#login").css({
+    display: "block",
+    "background-color": "#00000063",
   });
-
-  window.requestAnimationFrame(mover);
-}
-
-$(document).on("mousemove", function (event) {
-  X = event.pageX;
-  Y = event.pageY;
-
-  ancho = $(window).width() / 2;
-  largo = $(window).height() / 2;
-
-  Xtratado = (ancho - X) * (1 / 50);
-  Ytratado = (largo - Y) * (1 / 50);
+  login.classList.add("show");
+  codigoLogin.innerHTML += `
+  <div class="mb-3 col-10">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            
+           </div>
+           <div class="mb-3 col-10">
+           <label for="exampleInputPassword1" class="form-label">Password</label>
+           <input type="password" class="form-control" id="exampleInputPassword1">
+           </div>
+           <button type="submit" class="btn btn-colors border-primary rounded-pill mt-3 mb-5 col-10">login</button>
+           <div>
+             <p> Don't have an account?  <a id="btnCreatAccout" href="#creat" > Sing in</a> </p>
+           </div>
+  `;
 });
 
-mover();
-
-/* carossel */
-
-window.onload = function () {
-  recCarouselEvents();
-};
-
-function recCarouselEvents() {
-  // RECOMMENDATION CAROUSELS
-  var recTranslate = 0;
-  var recTranslateIncrem = 904;
-  var carRecsItems = $(".carousel-recs .carousel-listitem");
-  var carRecsItem = $(carRecsItems[0]);
-  var carRecsItemWidth = carRecsItem.outerWidth(true);
-  var carRecsRowWidth = carRecsItemWidth * 4;
-  var carRecsMaxRowWidth = carRecsItemWidth * carRecsItems.length;
-
-  $(".carousel-prev-rec").click(function () {
-    // PREV RECS
-    carRecsList = $(this)
-      .parents(".carousel-header")
-      .siblings(".carousel-body")
-      .find(".carousel-list");
-    recTranslate += recTranslateIncrem;
-
-    if (recTranslate <= 0) {
-      carRecsList.css("transform", "translatex(" + recTranslate + "px)");
-    } else {
-      recTranslate = 0;
-    }
+btnCreatAccout.addEventListener("click", function () {
+  $("#login").css({
+    display: "block",
+    "background-color": "#00000063",
   });
+  login.classList.add("show");
+  codigoLogin.innerHTML += `
+   <div class="mb-3 col-10">
+     <label for="exampleInputEmail1" class="form-label">Name</label>
+     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3 col-10">
+     <label for="exampleInputEmail1" class="form-label">Email</label>
+     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3 col-10">
+     <label for="exampleInputPassword1" class="form-label">Password</label>
+     <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+ <button type="submit" class="btn btn-colors border-primary rounded-pill mt-3 mb-5 col-10">Creat New Account</button>
+  `;
+});
 
-  $(".carousel-next-rec").click(function () {
-    // NEXT RECS
-    carRecsList = $(this)
-      .parents(".carousel-header")
-      .siblings(".carousel-body")
-      .find(".carousel-list");
-    recTranslate -= recTranslateIncrem;
-
-    if (recTranslate >= -1808) {
-      carRecsList.css("transform", "translatex(" + recTranslate + "px)");
-    } else {
-      recTranslate = -1808;
-    }
+closelogin.addEventListener("click", function () {
+  $("#login").css({
+    display: "none",
+    "background-color": "#00000063",
+    transition: "opacity .15s linear",
   });
-}
+  login.classList.remove("show");
+  codigoLogin.innerHTML = "";
+});
+
+
 /* menu scroll fix  */
 
 window.onscroll = function () {
@@ -100,7 +90,7 @@ const items = [
     delalhes:
       "After generating your fancy text symbols, you can copy and paste the to most websites and text processors. You could use it to generate a fancy Agario name (yep, weird text.",
     price: 10,
-    },
+  },
   {
     id: 1,
     nome: "Arma 2",
@@ -109,7 +99,7 @@ const items = [
     delalhes:
       "After generating your fancy text symbols, you can copy and paste the to most websites and text processors. You could use it to generate a fancy Agario name (yep, weird text.",
     price: 99,
-    },
+  },
   {
     id: 2,
     nome: "Arma 3",
@@ -165,14 +155,12 @@ const items = [
       "After generating your fancy text symbols, you can copy and paste the to most websites and text processors. You could use it to generate a fancy Agario name (yep, weird text.",
   },
 ];
-productsInCart = [];
-
 /* inicializador da loja  */
 inicializarLoja = () => {
   var containerProdutos = document.getElementById("produtos");
   items.map((val) => {
     $(".cart").css({
-      visibility: "hidden",   
+      visibility: "hidden",
     });
     console.log(val.nome);
     containerProdutos.innerHTML += `
@@ -197,45 +185,39 @@ inicializarLoja = () => {
 
 inicializarLoja();
 
-/*       carrinho  */
 atualizarCarrinho = () => {
   var containerCarrinho = document.querySelector(".modal-body");
-  var valorTotaldosProdutos = document.getElementById("totalproduct")
+  var valorTotaldosProdutos = document.getElementById("totalproduct");
+
   valorTotaldosProdutos.innerHTML = "";
   containerCarrinho.innerHTML = "";
   limpartudo = () => {
     valorTotaldosProdutos.innerHTML = "";
     containerCarrinho.innerHTML = "";
-  }
-  limpartudo()
+  };
+  limpartudo();
+
   items.map((val) => {
     if (val.quantidade > 0) {
-      var totalR =  val.price * val.quantidade 
+      var totalR = val.price * val.quantidade;
       containerCarrinho.innerHTML += `
-      <div class="d-flex"> 
+      <div class="d-flex justify-content-between"> 
       <img src="${val.img}" class="col-auto cartImg"> 
       <p class="px-3"> ${val.nome} </p> 
-        <div> 
-        <input type="button" class="plus" onclick="menos()" value="-">
-          ${val.quantidade}
-        <input type="button" onclick="mais()" value="+">
-        </div>
-        <p class="total-item px-3 "> R$ ${totalR}</p>       
+       <div> 
+         <p>${val.quantidade} </p> 
       </div>
+       <p> R$${val.price}</p>
       <hr>`;
 
       var total = items.reduce(getTotal, 0);
 
       function getTotal(total, item) {
-       return total + (item.price * item.quantidade);
+        return total + item.price * item.quantidade;
       }
-   /*    $('.btn').addEventListener('click', function(){
-        valorTotaldosProdutos.innerHTML= ""
-      }) */
-      valorTotaldosProdutos.innerHTML = `<p> Valor Total: R$ ${total} </p>`
+      valorTotaldosProdutos.innerHTML = `<p style="color:#00da24;"> Valor Total: R$ ${total} </p>`;
     }
   });
-  
 };
 
 /* contador total de itens  */
@@ -248,51 +230,43 @@ function contar() {
 }
 
 function zerar() {
-   items.map((val)=>{
-     val.quantidade = 0
-   })
-   numero = 0
-   contador.innerHTML = null
-   limpartudo()
-   removeboll()
- } 
-
- removeboll = () => {
- if (numero > 0 ) {
-  $(".cart").css({
-    visibility: "visible",
+  items.map((val) => {
+    val.quantidade = 0;
   });
-  }else {
-  $(".cart").css({
-    visibility: "hidden",   
-  });
-  }
+  numero = 0;
+  contador.innerHTML = null;
+  limpartudo();
+  removeboll();
 }
+
+removeboll = () => {
+  if (numero > 0) {
+    $(".cart").css({
+      visibility: "visible",
+    });
+  } else {
+    $(".cart").css({
+      visibility: "hidden",
+    });
+  }
+};
 
 /*  quantidade  */
-var links = document.getElementsByClassName("btn");
+add = () => {
+  var links = document.getElementsByClassName("btn");
 
-for (var i = 0; i < links.length; i++) {
-  links[i].addEventListener("click", function () {
-    let key = this.getAttribute("key");
-    items[key].quantidade++;
-    removeboll()
-    atualizarCarrinho();
-  });
-}
-atualizarCarrinho();
-
-/* function totalCost(items) {
-  // console.log("The product price is", product.price);
-   items.map((val)=>{
-   let cartCost = val.quantidade
-   if(cartCost != null) {
-       cartCost parseInt(cartCost);
-       var totaal = ( cartCost +
-       val.price);
-    }else {
-      var totaal = val.price);
-   }
-  })
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", function () {
+      let key = this.getAttribute("key");
+      items[key].quantidade++;
+      removeboll();
+      atualizarCarrinho();
+    });
   }
-  totalCost() */
+};
+
+add();
+
+/* Update quantity */
+
+atualizarCarrinho();
