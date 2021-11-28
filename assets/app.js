@@ -6,6 +6,7 @@ var btnCreatAccout = document.getElementById("singup");
 var closelogin = document.querySelector(".closelogin");
 var body = document.getElementById('body')
 var loginmodal = document.getElementById('loginpass')
+
 btnlogin.addEventListener("click", function () {
   ShowOfClean()
   codigoLogin.innerHTML += `
