@@ -1,69 +1,115 @@
-
-
-
 // login Area //
-
 var codigoLogin = document.getElementById("login-codigo");
 var login = document.getElementById("login");
 var btnlogin = document.getElementById("loginbtn");
-var btnCreatAccout = document.getElementById("btnCreatAccout");
+var btnCreatAccout = document.getElementById("singup");
 var closelogin = document.querySelector(".closelogin");
-
+var body = document.getElementById('body')
+var loginmodal = document.getElementById('loginpass')
 btnlogin.addEventListener("click", function () {
-  $("#login").css({
-    display: "block",
-    "background-color": "#00000063",
-  });
-  login.classList.add("show");
+  ShowOfClean()
   codigoLogin.innerHTML += `
-  <div class="mb-3 col-10">
+           <div class="mb-3 col-10">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
            </div>
            <div class="mb-3 col-10">
-           <label for="exampleInputPassword1" class="form-label">Password</label>
-           <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="InputPassword"> 
+            <i class="material-icons vision-password" style="top: 211px;"> remove_red_eye</i> 
            </div>
            <button type="submit" class="btn btn-colors border-primary rounded-pill mt-3 mb-5 col-10">login</button>
            <div>
              <p> Don't have an account?  <a id="btnCreatAccout" href="#creat" > Sing in</a> </p>
            </div>
   `;
+   showpassword()
 });
 
+loginmodal.addEventListener("click", function() {
+  ShowOfClean()
+  codigoLogin.innerHTML += `
+           <div class="mb-3 col-10">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
+           </div>
+           <div class="mb-3 col-10">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="InputPassword"> 
+            <i class="material-icons vision-password" style="top: 211px;"> remove_red_eye</i> 
+           </div>
+           <button type="submit" class="btn btn-colors border-primary rounded-pill mt-3 mb-5 col-10">login</button>
+           <div>
+             <p> Don't have an account?  <a id="btnCreatAccout" href="#creat" > Sing in</a> </p>
+           </div>
+  `;
+   showpassword()
+})
+
 btnCreatAccout.addEventListener("click", function () {
-  $("#login").css({
-    display: "block",
-    "background-color": "#00000063",
-  });
-  login.classList.add("show");
+  ShowOfClean()
   codigoLogin.innerHTML += `
    <div class="mb-3 col-10">
      <label for="exampleInputEmail1" class="form-label">Name</label>
      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
     <div class="mb-3 col-10">
-     <label for="exampleInputEmail1" class="form-label">Email</label>
-     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+     <label for="exampleInputEmail2" class="form-label">Email</label>
+     <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
     </div>
     <div class="mb-3 col-10">
      <label for="exampleInputPassword1" class="form-label">Password</label>
-     <input type="password" class="form-control" id="exampleInputPassword1">
+     <input id="InputPassword" type="password" class="form-control" >
+     <div >
+     <i class="material-icons vision-password" style="top: 303px;"> remove_red_eye</i> 
+     </div>  
+     
     </div>
- <button type="submit" class="btn btn-colors border-primary rounded-pill mt-3 mb-5 col-10">Creat New Account</button>
+    <button type="submit" class="creat btn btn-colors border-primary rounded-pill mt-3 mb-5 col-10">Creat New Account</button>
   `;
+  showpassword()
 });
 
-closelogin.addEventListener("click", function () {
-  $("#login").css({
-    display: "none",
-    "background-color": "#00000063",
-    transition: "opacity .15s linear",
-  });
-  login.classList.remove("show");
-  codigoLogin.innerHTML = "";
+//close moldal
+$(document).click((event) => {
+  if (!$(event.target).closest('.modal-content').length == !$(event.target).closest('#loginbtn').length) {
+    $("#login").css({
+      display: "none",
+      "background-color": "#00000063",
+    });
+    login.classList.remove("show");
+    codigoLogin.innerHTML = "";
+  }        
 });
+
+showpassword = () =>{
+var visionPass1 = document.querySelector('.vision-password')
+
+visionPass1.addEventListener("click", function() {
+
+  let inputsenha1 = document.querySelector('#InputPassword')
+
+  if (inputsenha1.getAttribute('type') == 'password') {
+    inputsenha1.setAttribute('type', 'text')
+  } else {
+    inputsenha1.setAttribute('type', 'password')
+  }
+  
+});}
+
+ShowOfClean = () => {
+  codigoLogin.innerHTML =""
+  $("#login").css({
+    display: "block",
+    "background-color": "#00000063",
+    transition: "transform .3s ease-out",
+  });
+  $('#body').css({
+    "padding-right": "0px",
+  })
+  body.classList.add('modal-open')
+  login.classList.add("show");
+}
 
 
 /* menu scroll fix  */
@@ -253,24 +299,22 @@ removeboll = () => {
 };
 
 /*  quantidade  */
-add = () => {
+
   var links = document.getElementsByClassName("btn");
 
   for (var i = 0; i < links.length; i++) {
     links[i].addEventListener("click", function () {
       let key = this.getAttribute("key");
-      items[key].quantidade++;
+      items[key].quantidade++
       removeboll();
       atualizarCarrinho();
     });
   }
-};
-
-add();
 
 /* Update quantity */
 
 atualizarCarrinho();
+
 
 /* variaveis scroll page */
 const menuItems = document.querySelectorAll('.menu a[href^="#"]');
@@ -324,3 +368,6 @@ function smoothScrollTo(endX, endY, duration) {
     window.scroll(newX, newY);
   }, 1000 / 60); // 60 fps
 };
+
+// login user /// 
+

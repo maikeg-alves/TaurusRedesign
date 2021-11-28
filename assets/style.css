@@ -195,6 +195,18 @@ i {
 .btn:hover {
   color: #ffffff;
 }
+.visionpassword2{
+  position: absolute;
+  top: 298px;
+  right: 43px;
+  color: black;
+}
+.vision-password {
+  position: absolute;
+  top: 204px;
+  right: 43px;
+  color: black;
+}
 @keyframes xAxis {
     100% {
         transform: translateX(calc(50vw - 105px));
