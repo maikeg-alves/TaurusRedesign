@@ -207,6 +207,18 @@ i {
   right: 43px;
   color: black;
 }
+.msgerro{
+  background: red;
+  text-align: center;
+  width: 100%;
+  display: none;
+}
+.msgsucss{
+  background: rgb(92, 226, 14);
+  text-align: center;
+  width: 100%;
+  display: none;
+}
 @keyframes xAxis {
     100% {
         transform: translateX(calc(50vw - 105px));
