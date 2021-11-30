@@ -6,59 +6,44 @@ var btnCreatAccout = document.getElementById("singup");
 var closelogin = document.querySelector(".closelogin");
 var body = document.getElementById('body')
 var loginmodal = document.getElementById('loginpass')
-//label e input
-/* variaveisinpu = () => { 
-let LabelNomne = document.querySelector('#labelNome')
-let nome = document.querySelector('#nome')
-let LabelEmail = document.querySelector('#labelEmail')
-let email = document.querySelector("#email")
-let LabelSenha = document.querySelector('#labelPassword')
-let senha = document.querySelector("#senha")
-} */
+
 // ixibir modal 
+  textologin = () => {
+    ShowOfClean()
+    codigoLogin.innerHTML += `
+    <div class="mb-3 col-10">
+       <label for="email" id="labelEmail" class="form-label">Email</label>
+       <input id="email"  type="email" class="form-control" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3 col-10">
+        <label for="senha" id="labelPassword" class="form-label">Password</label>
+        <input id="senha"  type="password" class="form-control" >
+        <i class="material-icons vision-password" style="top: 211px;"> remove_red_eye</i> 
+     </div> 
+
+      <button type="button" onclick="entrar()" class="btn btn-colors border-primary rounded-pill mt-3 mb-5 col-10">login</button>
+      
+     <div class="msgsucss">
+        <p class="m-2">Acessando...</p>
+     </div>
+     <div class="msgerro">
+       <p class="m-2">Usúario não encontrado </p>
+     </div>
+     `;
+     showpassword()
+  }
+
 btnlogin.addEventListener("click", function () {
-  ShowOfClean()
-  codigoLogin.innerHTML += `
-           <div class="mb-3 col-10">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
-           </div>
-           <div class="mb-3 col-10">
-           <label for="senha" id="labelPassword" class="form-label">Password</label>
-   
-           <input id="senha"  type="password" class="form-control" >
-        
-           <i class="material-icons vision-password" style="top: 211px;"> remove_red_eye</i> 
-        </div>  
-           <button type="submit" class="btn btn-colors border-primary rounded-pill mt-3 mb-5 col-10">login</button>
-           <div>
-             <p> Don't have an account?  <a id="btnCreatAccout" href="#creat" > Sing in</a> </p>
-           </div>
-  `;
-   showpassword()
+ 
+   textologin()        
+   SetLogin()
 });
 
 //tela de login
 loginmodal.addEventListener("click", function() {
-  ShowOfClean()
-  codigoLogin.innerHTML += `
-           <div class="mb-3 col-10">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
-           </div>
-           <div class="mb-3 col-10">
-           <label for="senha" id="labelPassword" class="form-label">Password</label>
-   
-           <input id="senha"  type="password" class="form-control" >
-        
-           <i class="material-icons vision-password" style="top: 211px;"> remove_red_eye</i> 
-           </div>  
-           <button type="submit" class="btn btn-colors border-primary rounded-pill mt-3 mb-5 col-10">login</button>
-           <div>
-             <p> Don't have an account?  <a id="btnCreatAccout" href="#creat" > Sing in</a> </p>
-           </div>
-  `;
-   showpassword()
+   textologin()        
+   SetLogin()
 })
 
 //tela de cadastro
@@ -96,7 +81,7 @@ btnCreatAccout.addEventListener("click", function () {
   `; 
    
   showpassword()
-  SetLogin()
+  SetCadastro()
  
 });
 
@@ -401,7 +386,7 @@ function smoothScrollTo(endX, endY, duration) {
 
 // login /// 
 
-SetLogin = () => {
+SetCadastro = () => {
 
   let LabelNomne = document.querySelector('#labelNome')
   let nome = document.querySelector('#nome')
@@ -415,9 +400,6 @@ SetLogin = () => {
   let senha = document.querySelector("#senha")
   let validSenha = false
 
-  let msgsucss = document.querySelector('.msgscss')
-  let msgerro = document.querySelector('.msgerro')
-  let msg = document.querySelector('.msg')
    //validaçoes de keyup
   nome.addEventListener("keyup", () => {
    if (nome.value.length <= 2 ) {
@@ -467,29 +449,12 @@ SetLogin = () => {
         }
       )
       localStorage.setItem('listaUsers', JSON.stringify(listaUsers)) 
+      
       $('.msgerro').css( {display: "none"})
       $('.msgsucss').css( {display: "block"})
 
-      setTimeout(()=>{
-        ShowOfClean()
-        codigoLogin.innerHTML += `
-                 <div class="mb-3 col-10">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">  
-                 </div>
-                 <div class="mb-3 col-10">
-                 <label for="senha" id="labelPassword" class="form-label">Password</label>
-         
-                 <input id="senha"  type="password" class="form-control" >
-              
-                 <i class="material-icons vision-password" style="top: 211px;"> remove_red_eye</i> 
-                 </div>  
-                 <button type="submit" class="btn btn-colors border-primary rounded-pill mt-3 mb-5 col-10">login</button>
-                 <div>
-                   <p> Don't have an account?  <a id="btnCreatAccout" href="#creat" > Sing in</a> </p>
-                 </div>
-        `;
-        showpassword()
+      setTimeout(()=>{  
+        textologin()  
       }, 3000) 
       
     } else {
@@ -499,3 +464,61 @@ SetLogin = () => {
   })
   
 }
+
+function entrar(){
+  
+  let LabelEmail = document.querySelector('#labelEmail')
+  let email = document.querySelector("#email")
+ 
+  let LabelSenha = document.querySelector('#labelPassword')
+  let senha = document.querySelector("#senha")
+ 
+  let listaUsers = []  
+ 
+  let userValid ={
+    
+  }
+
+  listaUsers = JSON.parse(localStorage.getItem('listaUsers'))
+ 
+  listaUsers.map((item)=>{
+    if (email.value && item.emailCad && senha.value && item.senhaCad) {
+       userValid = {
+        email: item.emailCad,
+        senha: item.senhaCad
+      }
+    }
+  })
+    
+
+    if (email.value == userValid.email && senha.value == userValid.senha) {
+
+        LabelEmail.setAttribute('style', 'color: #11f511' )
+        email.setAttribute('style', 'border-color: #11f511')
+        LabelSenha.setAttribute('style', 'color: #11f511' )
+        senha.setAttribute('style', 'border-color: #11f511')
+        $('.msgsucss').css( {display: "block"})
+        $('.msgerro').css( {display: "none"})
+
+      setTimeout (()=>{
+          window.location.href = '/finalizar.html'
+          let token = Math.random().toString(16).substr(2) +  Math.random().toString(16).substr(2)
+          localStorage.setItem('token', token)
+      },2000)
+      
+      
+      localStorage.setItem('userLogado', JSON.stringify(userValid))
+      
+    } else {
+        localStorage.removeItem("token");
+        LabelEmail.setAttribute('style', 'color: red' )
+        email.setAttribute('style', 'border-color: red')
+        LabelSenha.setAttribute('style', 'color: red' )
+        senha.setAttribute('style', 'border-color: red')
+        $('.msgsucss').css( {display: "none"})
+        $('.msgerro').css( {display: "block"})
+        email.focus()
+    }
+
+}
+
