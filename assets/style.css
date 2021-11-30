@@ -126,7 +126,7 @@ i {
   -webkit-transition: all 1.7s 0s ease;
   -moz-transition: all 1.7s 0s ease;
   -o-transition: all 1.7s 0s ease;
-  transition: all 1.7s 0s ease-out;
+  transition: all 0.6s 0s ease-out;
 }
 .modal{
   color: #000;
