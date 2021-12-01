@@ -4,13 +4,13 @@ var login = document.getElementById("login");
 var btnlogin = document.getElementById("loginbtn");
 var btnCreatAccout = document.getElementById("singup");
 var closelogin = document.querySelector(".closelogin");
-var body = document.getElementById('body')
-var loginmodal = document.getElementById('loginpass')
+var body = document.getElementById("body");
+var loginmodal = document.getElementById("loginpass");
 
-// ixibir modal 
-  textologin = () => {
-    ShowOfClean()
-    codigoLogin.innerHTML += `
+// ixibir modal de login //
+textologin = () => {
+  ShowOfClean();
+  codigoLogin.innerHTML += `
     <div class="mb-3 col-10">
        <label for="email" id="labelEmail" class="form-label">Email</label>
        <input id="email"  type="email" class="form-control" aria-describedby="emailHelp">
@@ -31,24 +31,21 @@ var loginmodal = document.getElementById('loginpass')
        <p class="m-2">Usúario não encontrado </p>
      </div>
      `;
-     showpassword()
-  }
+  showpassword();
+};
 
 btnlogin.addEventListener("click", function () {
- 
-   textologin()        
-   SetLogin()
+  textologin();
 });
 
 //tela de login
-loginmodal.addEventListener("click", function() {
-   textologin()        
-   SetLogin()
-})
+loginmodal.addEventListener("click", function () {
+  textologin();
+});
 
 //tela de cadastro
 btnCreatAccout.addEventListener("click", function () {
-  ShowOfClean()
+  ShowOfClean();
   codigoLogin.innerHTML += `
    <div class="mb-3 col-10">
         <label for="nome" id="labelNome" class="form-label">Name</label>
@@ -78,54 +75,56 @@ btnCreatAccout.addEventListener("click", function () {
     <div class="msgsucss">
     <p class="m-2">cadastrado com sucesso, agurde ...</p>
    </div>
-  `; 
-   
-  showpassword()
-  SetCadastro()
- 
+  `;
+
+  showpassword();
+  SetCadastro();
 });
 
-//close moldal
+//close moldal //
 $(document).dblclick((event) => {
-  if (!$(event.target).closest('.modal-content').length == !$(event.target).closest('#loginbtn').length) {
+  if (
+    !$(event.target).closest(".modal-content").length ==
+    !$(event.target).closest("#loginbtn").length
+  ) {
     $("#login").css({
       display: "none",
       "background-color": "#00000063",
     });
     login.classList.remove("show");
     codigoLogin.innerHTML = "";
-  }        
+  }
 });
 
-showpassword = () =>{
-var visionPass = document.querySelector('.vision-password')
+//mostrar senha //
+showpassword = () => {
+  var visionPass = document.querySelector(".vision-password");
 
-visionPass.addEventListener("click", function() {
+  visionPass.addEventListener("click", function () {
+    let inputsenha = document.querySelector("#senha");
 
-  let inputsenha = document.querySelector('#senha')
+    if (inputsenha.getAttribute("type") == "password") {
+      inputsenha.setAttribute("type", "text");
+    } else {
+      inputsenha.setAttribute("type", "password");
+    }
+  });
+};
 
-  if (inputsenha.getAttribute('type') == 'password') {
-    inputsenha.setAttribute('type', 'text')
-  } else {
-    inputsenha.setAttribute('type', 'password')
-  }
-  
-});}
-
+//limpar dados do modal ao selecionar outro //
 ShowOfClean = () => {
-  codigoLogin.innerHTML =""
+  codigoLogin.innerHTML = "";
   $("#login").css({
     display: "block",
     "background-color": "#00000063",
     transition: "transform .3s ease-out",
   });
-  $('#body').css({
+  $("#body").css({
     "padding-right": "0px",
-  })
-  body.classList.add('modal-open')
+  });
+  body.classList.add("modal-open");
   login.classList.add("show");
-}
-
+};
 
 /* menu scroll fix  */
 
@@ -217,6 +216,7 @@ const items = [
       "After generating your fancy text symbols, you can copy and paste the to most websites and text processors. You could use it to generate a fancy Agario name (yep, weird text.",
   },
 ];
+
 /* inicializador da loja  */
 inicializarLoja = () => {
   var containerProdutos = document.getElementById("produtos");
@@ -315,28 +315,27 @@ removeboll = () => {
 
 /*  quantidade  */
 
-  var links = document.getElementsByClassName("btn");
+var links = document.getElementsByClassName("btn");
 
-  for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener("click", function () {
-      let key = this.getAttribute("key");
-      items[key].quantidade++;
-      removeboll();
-      atualizarCarrinho();
-    });
-  }
+for (var i = 0; i < links.length; i++) {
+  links[i].addEventListener("click", function () {
+    let key = this.getAttribute("key");
+    items[key].quantidade++;
+    removeboll();
+    atualizarCarrinho();
+  });
+}
 
 /* Update quantity */
 
 atualizarCarrinho();
-
 
 /* variaveis scroll page */
 const menuItems = document.querySelectorAll('.menu a[href^="#"]');
 
 //events scrol click //
 function getScrollTopByHref(element) {
-  const id = element.getAttribute('href');
+  const id = element.getAttribute("href");
   return document.querySelector(id).offsetTop;
 }
 
@@ -345,17 +344,14 @@ function scrollToPosition(to) {
 }
 
 function scrollToIdOnClick(event) {
-
   event.preventDefault();
   const to = getScrollTopByHref(event.currentTarget);
   scrollToPosition(to);
 }
 
-menuItems.forEach(item => {
-  item.addEventListener('click', scrollToIdOnClick);
+menuItems.forEach((item) => {
+  item.addEventListener("click", scrollToIdOnClick);
 });
-
-
 
 // Smooth scroll animation
 function smoothScrollTo(endX, endY, duration) {
@@ -365,12 +361,13 @@ function smoothScrollTo(endX, endY, duration) {
   const distanceY = endY - startY;
   const startTime = new Date().getTime();
 
-  duration = typeof duration !== 'undefined' ? duration : 400;
+  duration = typeof duration !== "undefined" ? duration : 400;
 
   // Easing function
   const easeInOutQuart = (time, from, distance, duration) => {
-    if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
-    return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
+    if ((time /= duration / 2) < 1)
+      return (distance / 2) * time * time * time * time + from;
+    return (-distance / 2) * ((time -= 2) * time * time * time - 2) + from;
   };
 
   const timer = setInterval(() => {
@@ -382,143 +379,133 @@ function smoothScrollTo(endX, endY, duration) {
     }
     window.scroll(newX, newY);
   }, 1000 / 60); // 60 fps
-};
+}
 
-// login /// 
+// login AUTENTICAÇÃO DE USER  ///
 
 SetCadastro = () => {
+  let LabelNomne = document.querySelector("#labelNome");
+  let nome = document.querySelector("#nome");
+  let validNome = false;
 
-  let LabelNomne = document.querySelector('#labelNome')
-  let nome = document.querySelector('#nome')
-  let validNome = false 
+  let LabelEmail = document.querySelector("#labelEmail");
+  let email = document.querySelector("#email");
+  let validEmail = false;
 
-  let LabelEmail = document.querySelector('#labelEmail')
-  let email = document.querySelector("#email")
-  let validEmail = false 
+  let LabelSenha = document.querySelector("#labelPassword");
+  let senha = document.querySelector("#senha");
+  let validSenha = false;
 
-  let LabelSenha = document.querySelector('#labelPassword')
-  let senha = document.querySelector("#senha")
-  let validSenha = false
-
-   //validaçoes de keyup
+  //validaçoes de keyup
   nome.addEventListener("keyup", () => {
-   if (nome.value.length <= 2 ) {
-      LabelNomne.setAttribute('style', 'color: red' )
-      nome.setAttribute('style', 'border-color: red')
-      validNome = false 
-   } else {
-     LabelNomne.setAttribute('style', 'color: #11f511' )
-     nome.setAttribute('style', 'border-color: #11f511')
-     validNome = true
-   } 
-  })
+    if (nome.value.length <= 2) {
+      LabelNomne.setAttribute("style", "color: red");
+      nome.setAttribute("style", "border-color: red");
+      validNome = false;
+    } else {
+      LabelNomne.setAttribute("style", "color: #11f511");
+      nome.setAttribute("style", "border-color: #11f511");
+      validNome = true;
+    }
+  });
 
   email.addEventListener("keyup", () => {
-    if (email.value.length <= 4  ) {
-       LabelEmail.setAttribute('style', 'color: red' )
-       email.setAttribute('style', 'border-color: red')
-       validEmail = false 
+    if (email.value.length <= 4) {
+      LabelEmail.setAttribute("style", "color: red");
+      email.setAttribute("style", "border-color: red");
+      validEmail = false;
     } else {
-      LabelEmail.setAttribute('style', 'color: #11f511' )
-      email.setAttribute('style', 'border-color: #11f511')
-      validEmail = true
-    } 
-   })
-
-   senha.addEventListener("keyup", () => {
-    if (senha.value.length <= 6  ) {
-       LabelSenha.setAttribute('style', 'color: red' )
-       senha.setAttribute('style', 'border-color: red')
-       validSenha = false 
-    } else {
-      LabelSenha.setAttribute('style', 'color: #11f511' )
-      senha.setAttribute('style', 'border-color: #11f511')
-      validSenha = true
-    } 
-   })
-    
-   $('.cadastrar').click( ()=>{
-    if (validNome && validEmail && validSenha) {
-      let listaUsers = JSON.parse(localStorage.getItem('listaUsers') || '[]')
-
-      listaUsers.push(
-        {
-          nomeCad: nome.value,
-          emailCad: email.value,
-          senhaCad: senha.value
-        }
-      )
-      localStorage.setItem('listaUsers', JSON.stringify(listaUsers)) 
-      
-      $('.msgerro').css( {display: "none"})
-      $('.msgsucss').css( {display: "block"})
-
-      setTimeout(()=>{  
-        textologin()  
-      }, 3000) 
-      
-    } else {
-      $('.msgsucss').css( {display: "none"})
-      $('.msgerro').css( {display: "block"})
+      LabelEmail.setAttribute("style", "color: #11f511");
+      email.setAttribute("style", "border-color: #11f511");
+      validEmail = true;
     }
-  })
-  
-}
+  });
 
-function entrar(){
-  
-  let LabelEmail = document.querySelector('#labelEmail')
-  let email = document.querySelector("#email")
- 
-  let LabelSenha = document.querySelector('#labelPassword')
-  let senha = document.querySelector("#senha")
- 
-  let listaUsers = []  
- 
-  let userValid ={
-    
-  }
+  senha.addEventListener("keyup", () => {
+    if (senha.value.length <= 6) {
+      LabelSenha.setAttribute("style", "color: red");
+      senha.setAttribute("style", "border-color: red");
+      validSenha = false;
+    } else {
+      LabelSenha.setAttribute("style", "color: #11f511");
+      senha.setAttribute("style", "border-color: #11f511");
+      validSenha = true;
+    }
+  });
 
-  listaUsers = JSON.parse(localStorage.getItem('listaUsers'))
- 
-  listaUsers.map((item)=>{
-    if (email.value && item.emailCad && senha.value && item.senhaCad) {
-       userValid = {
+  $(".cadastrar").click(() => {
+    if (validNome && validEmail && validSenha) {
+      let listaUsers = JSON.parse(localStorage.getItem("listaUsers") || "[]");
+
+      listaUsers.push({
+        nomeCad: nome.value,
+        emailCad: email.value,
+        senhaCad: senha.value,
+      });
+      localStorage.setItem("listaUsers", JSON.stringify(listaUsers));
+
+      $(".msgerro").css({ display: "none" });
+      $(".msgsucss").css({ display: "block" });
+
+      setTimeout(() => {
+        textologin();
+      }, 3000);
+    } else {
+      $(".msgsucss").css({ display: "none" });
+      $(".msgerro").css({ display: "block" });
+    }
+  });
+};
+
+function entrar() {
+  let LabelEmail = document.querySelector("#labelEmail");
+  let email = document.querySelector("#email");
+
+  let LabelSenha = document.querySelector("#labelPassword");
+  let senha = document.querySelector("#senha");
+
+  let listaUsers = [];
+
+  let userValid = {email:null, senha:null};
+
+  listaUsers = JSON.parse(localStorage.getItem("listaUsers"));
+
+  listaUsers.map((item) => {
+    if (email.value == item.emailCad && senha.value == item.senhaCad) {
+      userValid = {
         email: item.emailCad,
         senha: item.senhaCad
-      }
+      };
     }
-  })
-    
+  });
 
-    if (email.value == userValid.email && senha.value == userValid.senha) {
+  if (email.value == userValid.email && senha.value == userValid.senha) {
 
-        LabelEmail.setAttribute('style', 'color: #11f511' )
-        email.setAttribute('style', 'border-color: #11f511')
-        LabelSenha.setAttribute('style', 'color: #11f511' )
-        senha.setAttribute('style', 'border-color: #11f511')
-        $('.msgsucss').css( {display: "block"})
-        $('.msgerro').css( {display: "none"})
+    LabelEmail.setAttribute("style", "color: #11f511");
+    email.setAttribute("style", "border-color: #11f511");
+    LabelSenha.setAttribute("style", "color: #11f511");
+    senha.setAttribute("style", "border-color: #11f511");
+    $(".msgsucss").css({ display: "block" });
+    $(".msgerro").css({ display: "none" });
 
-      setTimeout (()=>{
-          window.location.href = '/finalizar.html'
-          let token = Math.random().toString(16).substr(2) +  Math.random().toString(16).substr(2)
-          localStorage.setItem('token', token)
-      },2000)
-      
-      
-      localStorage.setItem('userLogado', JSON.stringify(userValid))
-      
-    } else {
-        localStorage.removeItem("token");
-        LabelEmail.setAttribute('style', 'color: red' )
-        email.setAttribute('style', 'border-color: red')
-        LabelSenha.setAttribute('style', 'color: red' )
-        senha.setAttribute('style', 'border-color: red')
-        $('.msgsucss').css( {display: "none"})
-        $('.msgerro').css( {display: "block"})
-        email.focus()
-    }
+    setTimeout(() => {
+      let token =
+      Math.random().toString(16).substr(2) +
+      Math.random().toString(16).substr(2);
+      localStorage.setItem("token", token);
+      window.location.href = "/finalizar.html";
+      localStorage.setItem('userLogado', JSON.stringify(userValid));
+    }, 2000);
 
+  } else {
+    localStorage.removeItem("token");
+    LabelEmail.setAttribute("style", "color: red");
+    email.setAttribute("style", "border-color: red");
+    LabelSenha.setAttribute("style", "color: red");
+    senha.setAttribute("style", "border-color: red");
+    $(".msgsucss").css({ display: "none" });
+    $(".msgerro").css({ display: "block" });
+    email.focus();
+  }
 }
-
+/* finalizar compra  */

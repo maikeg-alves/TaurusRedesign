@@ -24,22 +24,86 @@
       src="https://kit.fontawesome.com/16f4537d4f.js"
       crossorigin="anonymous"
     ></script>
-
+      <script src="/assets/app.js"></script>
+      <link rel="stylesheet" href="/assets/style.css">
+      <style>
+          * {
+              color:black
+          }
+      </style>
     <title>Document</title>
   </head>
   <body>
-    
+    <div>
+        <h1 id="logado"></h1>
+      </div>
+   <section>
+     <div class="container">
+           <div class="row">
+               <div class="col corpo">
+                   <h1>Shopping Cart</h1>
+               </div>
+               <div class="d-flex lista">
+                   <div class="col-auto">
+
+                   </div>
+               </div>
+               <div class="d-flex total">
+                   <div class="col-12">
+                       <a href="index.html">cancelar compra </a>
+                       <p class="valor-total">00</p>
+                   </div>  
+               </div>
+           </div>
+      </div>
+     <!-- // DADOS CARTÃO // -->
+      <div class="container">
+          <div class="row">
+              <div class="col">
+                  <h1>Card Detatals</h1>
+              </div>
+              <div class="col=12 image-cartão">
+                  <img src="" class="carão"> 
+                  <img src="" class="bandeira">
+              </div>
+              <div class="d-flex dados">
+                  <div class="col">
+                      <div class="col">
+                          <label for="nomeCard"></label>
+                          <input type="text" id="nomeCard">
+                      </div>
+                      <div class="col">
+                        <label for="numeroCard"></label>
+                        <input type="text" id="numeroCard">
+                     </div>
+                     <div class="col">
+                        <label for="numeroCard"></label>
+                        <input type="date" id="numeroCard">
+
+                        <label for="numeroCard"></label>
+                        <input type="date" id="numeroCard">
+
+                        <label for="numeroCard"></label>
+                        <input type="number" id="numeroCard">
+                     </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+    </section>    
+     
       <div>
         <h1 id="logado"></h1>
       </div>
     <div>
       <button onclick="sair()"></button>
-    </div>
+    </div> 
 
     <script>
-       let userLogado = JSON.parse(localStorage.getItem('userLogado'))
+       let userLogado = JSON.parse(localStorage.getItem("userLogado"))
        let logado = document.querySelector('#logado')
-       logado.innerHTML = `0lá ${userLogado.email}`
+       logado.innerHTML += `<p>0lá ${userLogado.email}</p>`
 
       if (localStorage.getItem("token") == null) {
         alert("Você precisa estar logado para acessar essa página");
