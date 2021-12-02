@@ -82,7 +82,7 @@ btnCreatAccout.addEventListener("click", function () {
 });
 
 //close moldal //
-$(document).dblclick((event)  => {
+$(document).dblclick((event) => {
   if (
     !$(event.target).closest(".modal-content").length ==
     !$(event.target).closest("#loginbtn").length
@@ -142,7 +142,6 @@ window.onscroll = function () {
 /*     CARRINHO DE COMPRAS  */
 
 /* array com os produtos  */
-
 const items = [
   {
     id: 0,
@@ -452,7 +451,7 @@ SetCadastro = () => {
         emailCad: email.value,
         senhaCad: senha.value,
       });
-
+      
       localStorage.setItem("listaUsers", JSON.stringify(listaUsers));
 
       $(".msgerro").css({ display: "none" });
@@ -468,7 +467,6 @@ SetCadastro = () => {
   });
 };
 
-
 function entrar() {
   let LabelEmail = document.querySelector("#labelEmail");
   let email = document.querySelector("#email");
@@ -483,7 +481,7 @@ function entrar() {
   listaUsers = JSON.parse(localStorage.getItem("listaUsers"));
 
   listaUsers.map((item) => {
-    if (email.value == item.emailCad && senha.value == items.enhaCad) {
+    if (email.value == item.emailCad && senha.value == item.senhaCad) {
       userValid = {
         email: item.emailCad,
         senha: item.senhaCad
@@ -568,20 +566,3 @@ $(document).dblclick( (eve) => {
   } 
 });
 
-
-
-/*                                      CODIGO TESTE                                             */
-/* items.map((val) => {
-let listaProdutos = JSON.parse(localStorage.getItem("listaProdutos") || "[]");
-
-listaProdutos.push({
-  idCad: val.id,
-  nomeCad: val.name,
-  imgCad: val.img,
-  quantidadeCad: val.quantidade,
-  priceCad: val.price,
-});
-
-localStorage.setItem("listaProdutos", JSON.stringify(listaProdutos));
-
-}) */
