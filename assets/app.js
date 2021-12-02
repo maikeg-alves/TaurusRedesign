@@ -6,7 +6,7 @@ var btnCreatAccout = document.getElementById("singup");
 var closelogin = document.querySelector(".closelogin");
 var body = document.getElementById("body");
 var loginmodal = document.getElementById("loginpass");
-
+const token = localStorage.getItem("token")
 // ixibir modal de login //
 textologin = () => {
   ShowOfClean();
@@ -82,7 +82,7 @@ btnCreatAccout.addEventListener("click", function () {
 });
 
 //close moldal //
-$(document).dblclick((event) => {
+$(document).dblclick((event)  => {
   if (
     !$(event.target).closest(".modal-content").length ==
     !$(event.target).closest("#loginbtn").length
@@ -142,6 +142,7 @@ window.onscroll = function () {
 /*     CARRINHO DE COMPRAS  */
 
 /* array com os produtos  */
+
 const items = [
   {
     id: 0,
@@ -234,8 +235,8 @@ inicializarLoja = () => {
                     <p class="px-4">Detalhes</p>
                     <p class="c pb-5 px-4 text-break"> ${val.delalhes} </p>
                     <div class="d-flex align-items-center justify-content-evenly">
-                      <button key="${val.id}" onclick="contar()" class="add-to-cart btn btn-green btn-primary rounded-pill" type="button">Comprar</button>
-                      <button data-name="arma 8" data-price="100" class="add-to-cart addtocart btn btn-primary rounded-pill btn-white " type="button"><i
+                      <button key="${val.id}" onclick="contar1()" class="add-to-cart btn btn-green btn-primary rounded-pill" type="button">Comprar</button>
+                      <button key="${val.id}" onclick="contar2()" class="add-to-cart addtocart btn btn-primary rounded-pill btn-white " type="button"><i
                           class="fas fa-plus"></i></button>
                     </div>
                   </section>
@@ -261,7 +262,6 @@ atualizarCarrinho = () => {
 
   items.map((val) => {
     if (val.quantidade > 0) {
-      var totalR = val.price * val.quantidade;
       containerCarrinho.innerHTML += `
       <div class="d-flex justify-content-between"> 
       <img src="${val.img}" class="col-auto cartImg"> 
@@ -286,9 +286,19 @@ atualizarCarrinho = () => {
 var numero = 0;
 var contador = document.querySelector(".total-count");
 
-function contar() {
+function contar2() {
   ++numero;
   contador.innerHTML = numero;
+}
+
+function contar1() {
+  if (token == null ) {
+    alert('voce precisa está logado')
+    document.querySelector('#Sing').scrollIntoView();
+  }else {
+  ++numero;
+  contador.innerHTML = numero;
+  }
 }
 
 function zerar() {
@@ -316,15 +326,15 @@ removeboll = () => {
 /*  quantidade  */
 
 var links = document.getElementsByClassName("btn");
-
-for (var i = 0; i < links.length; i++) {
-  links[i].addEventListener("click", function () {
-    let key = this.getAttribute("key");
-    items[key].quantidade++;
-    removeboll();
-    atualizarCarrinho();
-  });
-}
+  
+  for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener("click", function () {
+      let key = this.getAttribute("key");
+      items[key].quantidade++;
+      removeboll();
+      atualizarCarrinho();
+    });
+  }
 
 /* Update quantity */
 
@@ -333,7 +343,7 @@ atualizarCarrinho();
 /* variaveis scroll page */
 const menuItems = document.querySelectorAll('.menu a[href^="#"]');
 
-//events scrol click //
+//EVENTS DE SCROLL CLICK //
 function getScrollTopByHref(element) {
   const id = element.getAttribute("href");
   return document.querySelector(id).offsetTop;
@@ -442,6 +452,7 @@ SetCadastro = () => {
         emailCad: email.value,
         senhaCad: senha.value,
       });
+
       localStorage.setItem("listaUsers", JSON.stringify(listaUsers));
 
       $(".msgerro").css({ display: "none" });
@@ -457,6 +468,7 @@ SetCadastro = () => {
   });
 };
 
+
 function entrar() {
   let LabelEmail = document.querySelector("#labelEmail");
   let email = document.querySelector("#email");
@@ -471,7 +483,7 @@ function entrar() {
   listaUsers = JSON.parse(localStorage.getItem("listaUsers"));
 
   listaUsers.map((item) => {
-    if (email.value == item.emailCad && senha.value == item.senhaCad) {
+    if (email.value == item.emailCad && senha.value == items.enhaCad) {
       userValid = {
         email: item.emailCad,
         senha: item.senhaCad
@@ -493,9 +505,16 @@ function entrar() {
       Math.random().toString(16).substr(2) +
       Math.random().toString(16).substr(2);
       localStorage.setItem("token", token);
-      window.location.href = "/finalizar.html";
       localStorage.setItem('userLogado', JSON.stringify(userValid));
-    }, 2000);
+      window.location.href = "/index.html";
+    }, 1000);
+
+    $("#login").css({
+      display: "none",
+      "background-color": "#00000063",
+    });
+    login.classList.remove("show");
+    codigoLogin.innerHTML = "";
 
   } else {
     localStorage.removeItem("token");
@@ -508,4 +527,61 @@ function entrar() {
     email.focus();
   }
 }
+
 /* finalizar compra  */
+var finalizar = document.querySelector('.finalizar-compra')
+ 
+finalizar.addEventListener('click', ()=> {
+  if (token == null) {
+    alert('voce precisa está logado')
+    document.querySelector('#Sing').scrollIntoView();
+         
+   } else {
+        alert('você pode comprar ')
+   }
+})
+
+function logout() {
+  localStorage.removeItem('token');
+  localStorage.removeItem('userLogado')
+  window.location.href = "/index.html";
+}
+
+var pop = document.querySelector('.pop')
+
+$(".user-log").click(()=>{
+  if (token == null) {
+   document.querySelector("#Sing").scrollIntoView()
+  } else { 
+  let userLogado = JSON.parse(localStorage.getItem("userLogado"))
+   $(".pop").css({display:"block"})
+  pop.innerHTML = ` 
+  <div class="box arrow-top d-flex flex-column">
+   <p class="logado m-0">0lá ${userLogado.email}</p>
+   <button class="btn btn-light rounded-pill logout" onclick="logout()"> sair</button>
+  </div>`
+}
+})
+$(document).dblclick( (eve) => {
+  if ( !$(eve.target).closest(".box").length || !$(eve.target).closest(".user-log").length) {
+    $(".pop").css({display:"none"})
+  } 
+});
+
+
+
+/*                                      CODIGO TESTE                                             */
+/* items.map((val) => {
+let listaProdutos = JSON.parse(localStorage.getItem("listaProdutos") || "[]");
+
+listaProdutos.push({
+  idCad: val.id,
+  nomeCad: val.name,
+  imgCad: val.img,
+  quantidadeCad: val.quantidade,
+  priceCad: val.price,
+});
+
+localStorage.setItem("listaProdutos", JSON.stringify(listaProdutos));
+
+}) */
