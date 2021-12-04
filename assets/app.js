@@ -6,7 +6,7 @@ var btnCreatAccout = document.getElementById("singup");
 var closelogin = document.querySelector(".closelogin");
 var body = document.getElementById("body");
 var loginmodal = document.getElementById("loginpass");
-const token = localStorage.getItem("token")
+const token = localStorage.getItem("token");
 // ixibir modal de login //
 textologin = () => {
   ShowOfClean();
@@ -142,6 +142,7 @@ window.onscroll = function () {
 /*     CARRINHO DE COMPRAS  */
 
 /* array com os produtos  */
+
 const items = [
   {
     id: 0,
@@ -250,13 +251,18 @@ inicializarLoja();
 atualizarCarrinho = () => {
   var containerCarrinho = document.querySelector(".modal-body");
   var valorTotaldosProdutos = document.getElementById("totalproduct");
+  var listaProdutos = document.querySelector(".listaProdutos");
+  var vtotal = document.querySelector(".vtotal");
+  var subtotal = document.querySelector(".subtotal");
 
-  valorTotaldosProdutos.innerHTML = "";
-  containerCarrinho.innerHTML = "";
   limpartudo = () => {
     valorTotaldosProdutos.innerHTML = "";
     containerCarrinho.innerHTML = "";
+    listaProdutos.innerHTML = "";
+    subtotal.innerHTML = "";
+    vtotal.innerHTML = "";
   };
+
   limpartudo();
 
   items.map((val) => {
@@ -271,12 +277,24 @@ atualizarCarrinho = () => {
        <p> R$${val.price}</p>
       <hr>`;
 
+      listaProdutos.innerHTML += `
+      <div class="d-flex justify-content-xl-between""> 
+      <img src="${val.img}" class="col-auto cartImg"> 
+      <p class="px-3"> ${val.nome} </p> 
+       <div> 
+         <p>${val.quantidade} </p> 
+      </div>
+       <p> R$${val.price}</p>
+      <hr>`;
+
       var total = items.reduce(getTotal, 0);
 
       function getTotal(total, item) {
         return total + item.price * item.quantidade;
       }
       valorTotaldosProdutos.innerHTML = `<p style="color:#00da24;"> Valor Total: R$ ${total} </p>`;
+      vtotal.innerHTML = ` R$ ${total} `;
+      subtotal.innerHTML = ` R$ ${total} `;
     }
   });
 };
@@ -291,12 +309,12 @@ function contar2() {
 }
 
 function contar1() {
-  if (token == null ) {
-    alert('voce precisa está logado')
-    document.querySelector('#Sing').scrollIntoView();
-  }else {
-  ++numero;
-  contador.innerHTML = numero;
+  if (token == null) {
+    alert("voce precisa está logado");
+    document.querySelector("#Sing").scrollIntoView();
+  } else {
+    ++numero;
+    contador.innerHTML = numero;
   }
 }
 
@@ -325,15 +343,15 @@ removeboll = () => {
 /*  quantidade  */
 
 var links = document.getElementsByClassName("btn");
-  
-  for (var i = 0; i < links.length; i++) {
-      links[i].addEventListener("click", function () {
-      let key = this.getAttribute("key");
-      items[key].quantidade++;
-      removeboll();
-      atualizarCarrinho();
-    });
-  }
+
+for (var i = 0; i < links.length; i++) {
+  links[i].addEventListener("click", function () {
+    let key = this.getAttribute("key");
+    items[key].quantidade++;
+    removeboll();
+    atualizarCarrinho();
+  });
+}
 
 /* Update quantity */
 
@@ -451,7 +469,7 @@ SetCadastro = () => {
         emailCad: email.value,
         senhaCad: senha.value,
       });
-      
+
       localStorage.setItem("listaUsers", JSON.stringify(listaUsers));
 
       $(".msgerro").css({ display: "none" });
@@ -476,7 +494,7 @@ function entrar() {
 
   let listaUsers = [];
 
-  let userValid = {email:null, senha:null};
+  let userValid = { email: null, senha: null };
 
   listaUsers = JSON.parse(localStorage.getItem("listaUsers"));
 
@@ -484,13 +502,12 @@ function entrar() {
     if (email.value == item.emailCad && senha.value == item.senhaCad) {
       userValid = {
         email: item.emailCad,
-        senha: item.senhaCad
+        senha: item.senhaCad,
       };
     }
   });
 
   if (email.value == userValid.email && senha.value == userValid.senha) {
-
     LabelEmail.setAttribute("style", "color: #11f511");
     email.setAttribute("style", "border-color: #11f511");
     LabelSenha.setAttribute("style", "color: #11f511");
@@ -502,9 +519,11 @@ function entrar() {
       let token =
       Math.random().toString(16).substr(2) +
       Math.random().toString(16).substr(2);
+      
       localStorage.setItem("token", token);
-      localStorage.setItem('userLogado', JSON.stringify(userValid));
+      localStorage.setItem("userLogado", JSON.stringify(userValid));
       window.location.href = "/index.html";
+
     }, 1000);
 
     $("#login").css({
@@ -513,7 +532,6 @@ function entrar() {
     });
     login.classList.remove("show");
     codigoLogin.innerHTML = "";
-
   } else {
     localStorage.removeItem("token");
     LabelEmail.setAttribute("style", "color: red");
@@ -526,43 +544,131 @@ function entrar() {
   }
 }
 
-/* finalizar compra  */
-var finalizar = document.querySelector('.finalizar-compra')
- 
-finalizar.addEventListener('click', ()=> {
+/* FINALIZAR COMPRA   */
+var finalizar = document.querySelector(".finalizar-compra");
+var offcanvas = document.querySelector(".offcanvas");
+var btnCard = document.querySelector(".btn-card");
+var btnPaypal = document.querySelector(".btn-paypal");
+var corpoPayment = document.querySelector(".corpo-payment");
+
+finalizar.addEventListener("click", () => {
+  var cartshow = document.querySelector("#cart");
   if (token == null) {
-    alert('voce precisa está logado')
-    document.querySelector('#Sing').scrollIntoView();
-         
-   } else {
-        alert('você pode comprar ')
-   }
-})
+    alert("voce precisa está logado");
+    document.querySelector("#Sing").scrollIntoView();
+  } else {
+    corpoPayment.innerHTML = `
+  <div class="m-3 py-4 mtnn" >
+  <div class="pb-4">
+    <label for="">Name On Card</label>
+    <input type="text" class="col-12">
+  </div>
+  <div class="pb-4">
+    <label for="">Card Number</label>
+    <input type="text" name="" id="" class="col-12">
+  </div>
+  <div class="d-flex">
+    <div class="col-8 d-flex flex-column pb-4">
+      <label class="pb-4">Expiration Date:</label>
+      <input class="col-6" placeholder="MM / YYY">
+    </div>
+    <div class=" d-flex flex-column pb-4">
+      <label class="pb-4">CVV:</label>
+      <input type="tel" class="col-6" min="1" max="3" placeholder="XXX">
+    </div>
+  </div>
+   <div class="col-12 justify-content-center d-flex py-4">
+  <button type="button" class="col-10 btn btn-primary rounded-pill" 
+  style="font-size: x-large;">Check Out.</button>
+ </div>
+</div>
+   `;
+    cartshow.classList.remove("show");
+    $(".modal-backdrop").css({ opacity: "0" });
+    offcanvas.classList.add("show");
+    $(".offcanvas").css({
+      width: "1432px",
+      transition: "transform .5s cubic-bezier(0.76, 0.01, 0.58, 1)",
+    });
+    $(".btn-close").click(() => {
+      offcanvas.classList.remove("show");
+
+    });
+  }
+});
+
+
+btnCard.addEventListener("click", () => {
+  corpoPayment.innerHTML = `
+  <div class="m-3 py-4 mtnn" >
+  <div class="pb-4">
+    <label for="">Name On Card</label>
+    <input type="text" class="col-12">
+  </div>
+  <div class="pb-4">
+    <label for="">Card Number</label>
+    <input type="text" name="" id="" class="col-12">
+  </div>
+  <div class="d-flex">
+    <div class="col-8 d-flex flex-column pb-4">
+      <label class="pb-4">Expiration Date:</label>
+      <input class="col-6" placeholder="MM / YYY">
+    </div>
+    <div class=" d-flex flex-column pb-4">
+      <label class="pb-4">CVV:</label>
+      <input type="tel" class="col-6" min="1" max="3" placeholder="XXX">
+    </div>
+  </div>
+   <div class="col-12 justify-content-center d-flex py-4">
+  <button type="button" class="col-10 btn btn-primary rounded-pill" 
+  style="font-size: x-large;">Check Out.</button>
+ </div>
+</div>
+   `;
+});
+
+btnPaypal.addEventListener("click", () => {
+  corpoPayment.innerHTML = `
+  <div class="d-flex justify-content-center py-3 ">
+  <img src="https://www.pngkey.com/png/full/207-2076856_paypal.png" 
+  style="height: 143px; filter: invert(1);">
+   </div>
+    <div class=" d-flex flex-column align-items-center">
+  <p>Connect to your PayPal account</p>
+  <p class="col-10 text-break">Use Paypal as a payment method, just connect your account and we will take care of all the rest. :)</p>
+   </div>
+   <div class="col-12 justify-content-center d-flex py-4">
+   <button type="button" class="col-10 btn btn-primary rounded-pill" style="font-size: x-large;">Connect PayPal </button>
+ </div>
+  `;
+});
 
 function logout() {
-  localStorage.removeItem('token');
-  localStorage.removeItem('userLogado')
+  localStorage.removeItem("token");
+  localStorage.removeItem("userLogado");
   window.location.href = "/index.html";
 }
 
-var pop = document.querySelector('.pop')
+var pop = document.querySelector(".pop");
 
-$(".user-log").click(()=>{
+$(".user-log").click(() => {
   if (token == null) {
-   document.querySelector("#Sing").scrollIntoView()
-  } else { 
-  let userLogado = JSON.parse(localStorage.getItem("userLogado"))
-   $(".pop").css({display:"block"})
-  pop.innerHTML = ` 
+    document.querySelector("#Sing").scrollIntoView();
+  } else {
+    let userLogado = JSON.parse(localStorage.getItem("userLogado"));
+    $(".pop").css({ display: "block" });
+    pop.innerHTML = ` 
   <div class="box arrow-top d-flex flex-column">
    <p class="logado m-0">0lá ${userLogado.email}</p>
    <button class="btn btn-light rounded-pill logout" onclick="logout()"> sair</button>
-  </div>`
-}
-})
-$(document).dblclick( (eve) => {
-  if ( !$(eve.target).closest(".box").length || !$(eve.target).closest(".user-log").length) {
-    $(".pop").css({display:"none"})
-  } 
+  </div>`;
+  }
 });
-
+$(document).dblclick((eve) => {
+  if (
+    !$(eve.target).closest(".box").length ||
+    !$(eve.target).closest(".user-log").length
+  ) {
+    $(".pop").css({ display: "none" });
+  }
+});

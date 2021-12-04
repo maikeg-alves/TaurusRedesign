@@ -27,7 +27,9 @@ body::-webkit-scrollbar-thumb {
   border-radius: 20px; /* roundness of the scroll thumb */
   border: 3px solid rgb(73, 73, 73); /* creates padding around scroll thumb */
 }
-
+.listaProdutos{
+  color: #000;
+}
 .textHome {
   font-size: 46pt;
 }
@@ -269,7 +271,40 @@ body::-webkit-scrollbar-thumb {
 .pop {
   display: none;
 }
+/* metodo de pagmento style  */
+.modal-metodo {
+  background: #1d2c42;
+  height: 650px;
+  width: 100%;
+  border-radius: 11px;
+}
+.mtcp{
+  border-bottom: 1px solid #ffffff38;
+  border-top: 1px solid #ffffff38;
+}
+.mtcp p {
+  font-size: small;
+}
+.mtcp button {
+  background: none;
+  color: #ffffff;
+  height: 50px;
+  width: 133px;
+}
 
+.mtnn {
+  border-bottom: 1px solid #ffffff00;
+}
+.mtnn input {
+    background: none;
+    border: 0px;
+    border-bottom: 1px solid #ffffffa1;
+    color: white;
+}
+
+.mtnn input:focus-visible {
+  outline: none;
+}
 @keyframes xAxis {
     100% {
         transform: translateX(calc(50vw - 105px));

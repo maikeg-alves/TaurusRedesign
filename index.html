@@ -20,10 +20,74 @@
 </head>
 
 <body translate="no" id="body">
+   <!-- finalizar compras  -->
+   <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="visibility: visible;" aria-modal="true" role="dialog">
+    <div class="offcanvas-header">
+     
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body  d-flex">
+
+      <div class="container col-6">
+          <div class="row"> 
+        <div class="d-flex justify-content-xl-between text-black mb-5"> 
+          <h1>Shopping Cart</h1>
+         </div>
+         <div class=""> <!-- //definir o espaçamento -->
+           <ul class="d-flex text-black justify-content-xl-between align-items-end">
+             <li>Produxt</li>
+             <li>Name</li>
+             <li>Quantity</li>
+             <li>Price</li>
+           </ul>
+         </div>
+        <div class="listaProdutos"></div>
+
+            <div class="d-flex flex-column align-items-end">
+              <div class="col text-black">
+                <div class="d-flex align-items-center"><p class="pe-4 fw-bold">Subtotal: <p class="subtotal"> </p> </p></div>
+                <div class="d-flex align-items-center"><p class="pe-4 fw-bold">Shipping: <p class="shipping">R$ 0</p> </p></div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-xl-between">
+            <div class="col-auto">
+              <button type="button" class="btn btn-light rounded-pill d-flex align-items-center btn-lg border-dark"> <i class="material-icons"> chevron_left</i> Continue Shopping</button>
+            </div>
+            <div class="col-auto mb-3 text-black">
+              <div class="total d-flex"><p class="p-2 pe-3 fw-bold">Total: <h3 class="vtotal"> </h3> </p></div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+      <!-- //forma de pagamento -->
+      <div class="container col-3">
+        <div class="row">
+          <div class="modal-metodo">
+            <div class="m-3">
+               <h1>Payment info.</h1>
+            </div>
+            <div class="m-3 py-4 mtcp">
+              <p >Payment Method:</p>
+              <div class="text-white d-flex justify-content-around ">
+                <button type="button" class="btn-card btn btn-light rounded-pill border-ligh" >Credit Card</button>
+                <button type="button" class="btn-paypal btn btn-light rounded-pill border-ligh" >PayPal</button>
+              </div>
+            </div>
+              <div class="corpo-payment">
+
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 
   <!-- lista de itens --> 
   
-  <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+  <div class="modal fade " id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
