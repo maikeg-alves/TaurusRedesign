@@ -551,8 +551,9 @@ var btnPaypal = document.querySelector(".btn-paypal");
 var corpoPayment = document.querySelector(".corpo-payment");
 
 finalizar.addEventListener("click", () => {
-  var cartshow = document.querySelector("#cart");
-
+  
+  var cartshow = document.querySelector("#cart")
+  
   if (token == null) {
     alert("voce precisa está logado");
     document.querySelector("#Sing").scrollIntoView();
@@ -675,3 +676,5 @@ $(document).dblclick((eve) => {
     $(".pop").css({ display: "none" });
   }
 });
+
+
