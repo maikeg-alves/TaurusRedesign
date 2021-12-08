@@ -253,13 +253,12 @@ atualizarCarrinho = () => {
   var valorTotaldosProdutos = document.getElementById("totalproduct");
   var listaProdutos = document.querySelector(".listaProdutos");
   var vtotal = document.querySelector(".vtotal");
-  var subtotal = document.querySelector(".subtotal");
+ 
 
   limpartudo = () => {
     valorTotaldosProdutos.innerHTML = "";
     containerCarrinho.innerHTML = "";
     listaProdutos.innerHTML = "";
-    subtotal.innerHTML = "";
     vtotal.innerHTML = "";
   };
 
@@ -267,6 +266,7 @@ atualizarCarrinho = () => {
 
   items.map((val) => {
     if (val.quantidade > 0) {
+
       containerCarrinho.innerHTML += `
       <div class="d-flex justify-content-between"> 
       <img src="${val.img}" class="col-auto cartImg"> 
@@ -294,7 +294,6 @@ atualizarCarrinho = () => {
       }
       valorTotaldosProdutos.innerHTML = `<p style="color:#00da24;"> Valor Total: R$ ${total} </p>`;
       vtotal.innerHTML = ` R$ ${total} `;
-      subtotal.innerHTML = ` R$ ${total} `;
     }
   });
 };
@@ -519,7 +518,7 @@ function entrar() {
       let token =
       Math.random().toString(16).substr(2) +
       Math.random().toString(16).substr(2);
-      
+
       localStorage.setItem("token", token);
       localStorage.setItem("userLogado", JSON.stringify(userValid));
       window.location.href = "/index.html";
@@ -553,6 +552,7 @@ var corpoPayment = document.querySelector(".corpo-payment");
 
 finalizar.addEventListener("click", () => {
   var cartshow = document.querySelector("#cart");
+
   if (token == null) {
     alert("voce precisa está logado");
     document.querySelector("#Sing").scrollIntoView();
@@ -583,16 +583,19 @@ finalizar.addEventListener("click", () => {
  </div>
 </div>
    `;
+    
     cartshow.classList.remove("show");
-    $(".modal-backdrop").css({ opacity: "0" });
     offcanvas.classList.add("show");
+    $(".modal-backdrop").css({display: "none", opacity: "0"})
+
+    $("#cart").css({display: "none"})
     $(".offcanvas").css({
       width: "1432px",
       transition: "transform .5s cubic-bezier(0.76, 0.01, 0.58, 1)",
     });
     $(".btn-close").click(() => {
       offcanvas.classList.remove("show");
-
+       
     });
   }
 });
