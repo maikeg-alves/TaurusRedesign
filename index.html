@@ -12,10 +12,11 @@
     crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
   <script src="https://kit.fontawesome.com/16f4537d4f.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="assets/style.css">
-  
+  <link rel="stylesheet" href="/assets/responsive.css">
   <title>Document</title>
 </head>
 
@@ -141,7 +142,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
       <div class="container-fluid px-5">
         <div class="nav-item active">
-          <img src="img/logo.png" style="width: 200px;filter: invert(1);">
+          <img src="img/logo.png" class=" logonav" >
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
           aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -194,29 +195,83 @@
     <!-- infomes page 1  -->
     <div class="container-fluid  position-relative" style="height: 100vh; background: black;">
       <div class="row align-items-center">
-        <div class="col ">
-          <div>
-            <h1>arme1</h1>
+
+        <div class="col-12 position-absolute bottom-0 end-0">
+           <div class="d-flex flex-column align-items-end"> 
+            <ul class="d-flex p-2">
+              <li><i class=" ps-4 fs-5 fab fa-instagram"></i></li>
+              <li><i class=" ps-4 fs-5 fab fa-whatsapp"></i></li>
+              <li><i class=" ps-4 fs-5 fas fa-headset"></i></li>
+              <li><i class=" ps-4 fs-5 fab fa-facebook"></i></li>
+            </ul>
           </div>
+        </div>
+        
+        <div class="col-12 d-flex align-items-center flex-wrap justify-content-between" style="height: 100vh; position: absolute;">
+           <div class="letriHomeL " >
+             <h1>Power</h1>
+              </div>
+             <div class="letriHomeR ">
+                <h1>Guns</h1>
+             </div>
+        </div>
+
+        <div class="col ">
           <div class="col-12 circle-base">
              <div class="circle"></div>
           </div>
          <div class="col-12 d-flex arm justify-content-center aligh-items-center" >
             <img src="img/FZ556IA2.png" class="img-fluid " alt="" >
          </div>
-          <div>
-            <h1>arme2</h1>
-          </div>
         </div>
+
       </div>
-    </div>
+    </div> 
+
   </section>
 
+<!-- taurros historia  -->
+<section>
+  <div class="history-taurus container-flud bg-dark-dark ">
+    <div class="row">
+      <div class="col p-5 d-flex flex-column align-items-center" >
+        <div class=" col-auto d-flex flex-column align-items-center" >
+         <h1 class="py-3">TAURUS </h1>
+         <div class="tautus-control col-7 d-flex p-4">
+           <p class="text-brack pe-5 tautus-t1"> 
+             A Taurus é uma Empresa Estratégica de Defesa, com mais de 80 anos de história
+             e reputação sólida. Sediada em São Leopoldo, no Rio Grande do Sul, emprega mais 
+             de 2.100 pessoas no país e exporta para mais de 100 países. Fundada em 1939, 
+             a Empresa iniciou suas operações como forjaria, passando a produzir revólveres
+              na década de 40 e consolidando sua presença nos mercados de armas brasileiro e 
+              norte americano na década de 80, com a produção de diversos modelos de pistolas 
+              e armas táticas.
+            </p>
+            <p class="text-brack tautus-t2"> 
+                A marca Taurus, em latim, significa Touro, símbolo de 
+                força, segurança e virilidade, que também guarda relação direta com trabalho, 
+                otimismo, robustez econômica e prosperidade. Acreditando neste significado e
+                 diante do novo momento da companhia, seu logo, moderno e que remete ao processo 
+                 de evolução da empresa, mantém a tradição que a permitiu tornar-se uma das três
+                  maiores fabricantes de armas leves do mundo.
+            </p>
+         </div>
+        </div>
+         
+         <p>A mais de 80 anos no mercado de armas e defesa pessoal.
+          </p>
+         <div class="timeline d-flex align-items-center" >
+           <img src="img/timeline.png">
+         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- coluns page 2  -->
   <section>
     <div class="container-fluid">
-      <div class="row justify-content-center">
+       <div class="desktop-coluns2 row justify-content-center ">
         <section class="col-4 text-center bg-dark-dark">
           <p class="pt-3">fuzil de asalto</p>
           <h1>M416</h1>
@@ -281,13 +336,111 @@
           </div>
         </section>
       </div>
+
     </div>
   </section>
 
-  <div id="Sing"></div>
+ <section>  
   
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+   <!--  item 1 -->
+       
+   <div class="col-12 d-flex align-items-center flex-wrap justify-content-between" style="height: 100vh; position: absolute;">
+    <div class=" " >
+      <h1>a</h1>
+       </div>
+      <div class=" ">
+         <h1>b</h1>
+      </div>
+     </div>
+
+      <div class="item"> 
+        <section class="col-auto text-center bg-dark-dark">
+      
+          <h1>M416</h1>
+          <div>
+            <img src="img/armas line/M416.jpg" style="
+                width: 84%;
+                filter: invert(1);
+                ">
+          </div>
+          <p>T4 11,5 (FULL-AUTO)</p>
+          <div class="col-12 ">
+            <p class="col-12 p-2 text-break">After generating your fancy text symbols, you can copy and
+            paste the "fonts" to most websites and text processors. You
+            could use it to generate a fancy Agario name (yep, weird text
+            in agario is probably generated using a fancy text converter
+            similar to this), to generate a creative-looking instagram,
+            facebook, tumblr, or twitter post, for showing up n00bs on Steam,
+            or just for sending messages full.</p>
+          </div>
+          <div class="pb-4 gap-2 col-6 mx-auto">
+            <button class="btn btn-white btn-primary rounded-pill" type="button">Detalhes</button>
+          </div>
+          </section>
+       </div>
+  <!-- item 2 -->
+  <!--       <div class="item active">
+    <section class="col-4 text-center bg-white gloverup">
+      <p class="pt-3">fuzil de asalto</p>
+      <h1>AR15</h1>
+      <div class="py-5">
+        <img src="img/armas line/Ar15.png" style="width: 100%;">
+      </div>
+      <p>T4 11,5 (FULL-AUTO)</p>
+      <div class="col-auto px-5">
+        <p class="text-break">After generating your fancy text symbols, you can copy and
+        paste the "fonts" to most websites and text processors. You
+        could use it to generate a fancy Agario name (yep, weird text
+        in agario is probably generated using a fancy text converter
+        similar to this), to generate a creative-looking instagram,
+        facebook, tumblr, or twitter post, for showing up n00bs on Steam,
+        or just for sending messages full.</p>
+      </div>
+      <div class="pb-4 gap-2 col-6 mx-auto">
+        <button class="btn btn-dark btn-primary rounded-pill" type="button">Detalhes</button>
+      </div>
+      </section>
+  </div>
+         <!-- item 3 -->
+     <!--  <div class="item">
+    <section class="col-4 text-center bg-dark-dark">
+      <p class="pt-3">fuzil de asalto</p>
+      <h1>PP32</h1>
+      <div>
+        <img src="img/armas line/wqeqwd.png" style="width: 100%;
+           filter: invert(1);">
+      </div>
+      <p>T4 11,5 (FULL-AUTO)</p>
+      <div class="col-auto px-5">
+        <p class="text-break">After generating your fancy text symbols, you can copy and
+        paste the "fonts" to most websites and text processors. You
+        could use it to generate a fancy Agario name (yep, weird text
+        in agario is probably generated using a fancy text converter
+        similar to this), to generate a creative-looking instagram,
+        facebook, tumblr, or twitter post, for showing up n00bs on Steam,
+        or just for sending messages full.</p>
+      </div>
+      <div class="pb-4 gap-2 col-6 mx-auto">
+        <button class="btn btn-white btn-primary rounded-pill" type="button">Detalhes</button>
+      </div>
+      </section>
+     </div> -->
+
+ <!--    </div> -->
+    <!-- Carousel nav -->
+   <!--  <a class="carousel-control left" href="#carousel" data-slide="prev">‹</a>
+    <a class="carousel-control right" href="#carousel" data-slide="next">›</a>
+
+  </div> --> -->
+</section>     
+
+
+ 
+  <div id="Sing"></div> 
   <!-- page 3 login -->
-  <section class="py-5">
+  <section class="py-5 my-5">
     
     <div class="container-fluid p-0">
       <div class="row justify-content-center align-items-center">
@@ -300,7 +453,7 @@
           <img src="img/armas line/Raskrasil-CS-22.jpg" style="width: 650px;">
         </div>
       </div>
-      <div class="d-flex align-items-center flex-column col-auto gloverup">
+      <div class="d-flex py-5 align-items-center flex-column col-auto gloverup">
         <p class="fs-4">Deixe que faça parte da sua historia tambem!</p>
         <p class="col-5 text-break text-center">After generating your fancy text symbols, you can copy and
           paste the "fonts" to most websites and text processors. You
@@ -327,34 +480,27 @@
   <div id="Contact"></div>
 
   <!-- roda pé -->
-  <footer class="bg-dark-dark">
+  <footer class="bg-dark-dark" style="height: 76vh;">
     
     <div class="container">
-      <div class="row px-5 py-5 justify-content-between">
-        <div class="col-5">
+      <div class="row px-5 py-5 justify-content-between flex-column align-items-center">
+        <div class="col-5 d-flex flex-column align-items-center">
           <img class="pb-3" src="img/47224472.jpg" style="border-radius: 50%; width: 149px;">
           <h1 class="fs-2">For by Maicon Gabriel Alves</h1>
-          <div class="">
-            <p>Contact:</p>
-            <a href="https://github.com/maikeg-alves"><i class="icp2 pe-2 fab fa-github-alt"></i></a>
-            <a href=""><i class="icp2 fab fa-instagram"></i></a>
-          </div>
-          <p>Redesign Taurus</p>
-          <P class=" col-10 text-break">A idéia do projeto foi redesenhar e recriar a interface do web site da
+         
+          <p>Redesign Taurus:</p>
+          <p class=" col-10 text-break">A idéia do projeto foi redesenhar e recriar a interface do web site da
             Fabricante de armas brasileira, Taurus, dando um ar mais moderno e minimalista,
-            Para esse projeto utilizei css, html, javascript, jquery e a framework front and bootsrap</P>
-          <div class="d-flex ">
-            <ul class="p-0">
-              <i class="p-2 icp fab fa-css3-alt"></i>
-              <i class="p-2 icp fab fa-html5"></i>
-              <i class="p-2 icp fas fa-file-code"></i>
-              <i class="p-2 icp fab fa-bootstrap"></i>
-              <i class="p-2 icp fab fa-node-js"></i>
-            </ul>
+            Para esse projeto utilizei css, html, javascript, jquery e a framework front and bootsrap</p>
+           <div class="">
+            <p>Contato:</p>
+            <a href="https://github.com/maikeg-alves"><i class="icp2 pe-2 fab fa-github-alt" aria-hidden="true"></i></a>
+            <a href=""><i class="icp2 pe-2 fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="maicongabrielalves99@gmail.com"><i class="icp2 pe-2 fas fa-envelope" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
-  </footer>
+  </div></footer>
 
   <!-- aviso -->
   <section class="container-fluid atetionavise">
@@ -364,10 +510,9 @@
         o projeto tem como o único objetivo o estudo e treino de programação. ⚠️ </p>
     </div>
   </section>
-   
+
     <!-- script bootstrao -->  
     <script  type="text/javascript" src="assets/app.js" async></script>
-    
 </body>
 
 </html>

@@ -366,7 +366,7 @@ function getScrollTopByHref(element) {
 }
 
 function scrollToPosition(to) {
-  smoothScrollTo(0, to);
+  smoothScrollTo(85, to);
 }
 
 function scrollToIdOnClick(event) {
@@ -676,5 +676,3 @@ $(document).dblclick((eve) => {
     $(".pop").css({ display: "none" });
   }
 });
-
-
