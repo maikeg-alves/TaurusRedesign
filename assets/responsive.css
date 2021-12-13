@@ -1,5 +1,8 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
     /* home page   */
+    body{
+      background: black;
+    }
    .arm img {
     height: 52vh;
     position: absolute;
@@ -117,7 +120,7 @@
   }
   
   .active, .dot:hover {
-    background-color: #ffffff;
+    background-color: #ffffff00;
   }
   
   /* Fading animation */
@@ -147,23 +150,97 @@
   .page3-control2{
       flex-direction: column!important;
   }
-  .page3-text  {
-    width: auto!important;
-  }
   .page3-control2 img {
     width: 36vh!important;
   }
   .page3 {
-      padding: 0!important;
       margin: 0!important;
   }
   .page3-control1 p{
     width: 75%!important;
   }   
-  .page3-control1 {
-    padding: 0!important;
-  } 
   .page3-btn{
     width: 58.33333333%!important;
+  }
+  .Featured, .cl, .page3-control1, .page3 {
+    padding: 0!important;
+  }
+  .Featured{
+    padding-top: 49px;
+  }
+  .banner{
+    height: 97%;
+  }
+  .page4-final{
+    padding-bottom: 36px;
+  }
+
+  footer{
+    height: 100vh!important;
+  }
+  .footer1,.page3-text {
+    width: auto!important;
+  }
+  .footer1 p{
+    flex: 0 0 auto!important;
+    width: auto!important;
+    text-align: center;
+  } 
+  .footer1 h1{
+    font-size: calc(1.3rem + -1.4vw)!important;
+  }
+  .aviso{
+    flex: 0 0 auto!important;
+    width: 100%!important;
+  }
+  .msg-page3{
+    font-size: 13px!important;
+    text-align: center;
+  }
+  .page3, .page4, .page4-final{
+      background: white;
+  }
+  .Featured h1{
+    margin-bottom: 0!important;
+    padding-top: 31px;
+  }
+}
+
+@media only screen and  (min-width: 400px) {
+  .btn{
+    background: #f9c300;
+  }
+  .coluns-history, .page3 {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+  }
+  .history-taurus {
+    height: 89vh;
+  }
+  .carousel-inner{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer{
+    display: flex;
+    align-items: center;
+    height: 100vh!important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .btn{
+    background: #f90000;
+  }
+} 
+
+
+@media only screen and (min-width: 1200px) {
+  .btn{
+    background: #f900c3;
   }
 }

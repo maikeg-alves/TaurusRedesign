@@ -227,7 +227,7 @@ inicializarLoja = () => {
     });
     console.log(val.nome);
     containerProdutos.innerHTML += `
-                <li class="coll-3 p-3">
+                <li class="cl p-3">
                   <section class="banner">
                     <h1 class="pt-3 text-center">${val.nome}</h1>
                     <img class="py-5 px-4" src="${val.img}">
