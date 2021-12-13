@@ -27,6 +27,9 @@ body::-webkit-scrollbar-thumb {
   border-radius: 20px; /* roundness of the scroll thumb */
   border: 3px solid rgb(73, 73, 73); /* creates padding around scroll thumb */
 }
+ul#otis {
+  list-style-type: none;
+}
 .listaProdutos{
   color: #000;
 }

@@ -1,5 +1,8 @@
 @media only screen and (max-width: 640px) {
     /* home page   */
+    ul#otis {
+      list-style-type: none;
+    }
     body{
       background: black;
     }
@@ -229,6 +232,9 @@
     display: flex;
     align-items: center;
     height: 100vh!important;
+  }
+  ul#otis {
+    list-style-type: none;
   }
 }
 
