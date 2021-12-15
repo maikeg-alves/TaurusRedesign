@@ -1,6 +1,6 @@
 @media only screen and (max-width: 640px) {
     /* home page   */
-    ul#otis {
+    ul {
       list-style-type: none;
     }
     body{
