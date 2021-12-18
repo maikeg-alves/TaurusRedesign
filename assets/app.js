@@ -706,3 +706,30 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+$('.finalizar-mobile').click(()=>{
+  console.log('teste')
+  $('.show-buttom').css(({
+    transform:"none"
+  }))
+
+})
+$('.close-buttom').click(()=>{
+  console.log('teste')
+  $('.show-buttom').css(({
+    transform:""
+  }))
+})
+
+$('.menu-mobile').click(()=>{
+  console.log('teste')
+  $('.show-start').css(({
+    transform:"none"
+  }))
+
+})
+$('.close-start').click(()=>{
+  console.log('teste')
+  $('.show-start').css(({
+    transform:""
+  }))
+})

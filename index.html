@@ -22,6 +22,28 @@
 
 <body translate="no" id="body">
 
+   <!-- menu mobile -->
+   <div class="offcanvas offcanvas-start show-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel" style="visibility: visible;" aria-modal="true" role="dialog">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Offcanvas with backdrop</h5>
+      <button type="button" class="btn-close close-start text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>.....</p>
+    </div>
+  </div>
+  <!-- up sub mobile  -->
+
+  <div class="offcanvas offcanvas-bottom show-buttom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel" style="visibility: visible;" aria-modal="true" role="dialog">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+      <button type="button" class="btn-close close-buttom text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+      ...
+    </div>
+  </div>
+  
    <!-- finalizar compras  -->
    <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="visibility: visible;" aria-modal="true" role="dialog">
     <div class="offcanvas-header">
@@ -140,10 +162,18 @@
     <header class="fundo">
     </header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
-      <div class="container-fluid px-5">
+
+      <div class="container-fluid menulogo  px-5">
+        <button class="menu-mobile">
+          <i class="material-icons"> menu</i>
+        </button>
         <div class="nav-item active">
           <img src="img/logo.png" class="logonav" >
         </div>
+        <button class="finalizar-mobile">
+          <span class="cart cartmobile total-count" style="visibility: hidden;">0</span>
+          <i class=" material-icons"> shopping_bag</i>
+        </button>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
           aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -383,7 +413,7 @@
                 ">
             </div>
             <p>T4 11,5 (FULL-AUTO)</p>
-            <div class="col-12 text-black">
+            <div class="col-12">
               <p class="col-12 p-2 text-break">After generating your fancy text symbols, you can copy and
               paste the "fonts" to most websites and text processors. You
               could use it to generate a fancy Agario name (yep, weird text

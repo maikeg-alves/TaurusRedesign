@@ -1,10 +1,29 @@
 @media only screen and (max-width: 640px) {
     /* home page   */
-    ul#otis {
+    ul, li {
       list-style-type: none;
     }
     body{
       background: black;
+    }
+    .navbar-toggler, .menu{
+      display: none;
+    }
+    .menulogo {
+      display: flex!important;
+      justify-content: center!important;
+      justify-content: space-between!important;
+      padding-right: 1rem!important;
+      padding-left: 1rem!important;
+    }
+    .menu-mobile{
+      background: none;
+      border-style: none;
+      color: white;
+    }
+    .cartmobile {
+      top: 12px;
+      left: 304px;
     }
    .arm img {
     height: 52vh;
@@ -207,9 +226,23 @@
     margin-bottom: 0!important;
     padding-top: 31px;
   }
+  .show-buttom{
+       transform: "";
+  }
 }
 
 @media only screen and  (min-width: 400px) {
+  .menulogo {
+    display: flex!important;
+    justify-content: center!important;
+  }
+  .navbar-toggler{
+    display: none;
+  }
+  .cartmobile {
+    top: 12px;
+    left: 304px;
+  }
   .btn{
     background: #f9c300;
   }
@@ -233,20 +266,44 @@
     align-items: center;
     height: 100vh!important;
   }
-  ul#otis {
+  ul, li {
     list-style-type: none;
   }
 }
 
 @media only screen and (min-width: 992px) {
+  .logonav{
+    width: 159px;
+  }
   .btn{
     background: #f90000;
+  }
+  .menulogo {
+    display: flex!important;
+    justify-content: space-between!important;
+  }
+  .menu-mobile{
+    display: none;
   }
 } 
 
 
 @media only screen and (min-width: 1200px) {
+  .logonav{
+    width: 159px;
+  }
   .btn{
     background: #f900c3;
+  }
+  .coluns-history{
+    background: black;
+    height: 114vh;
+  }
+  .menulogo {
+    display: flex!important;
+    justify-content: space-between!important;
+  }
+  .menu-mobile{
+    display: none;
   }
 }
