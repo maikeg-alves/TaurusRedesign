@@ -720,13 +720,7 @@ $('.close-buttom').click(()=>{
   }))
 })
 
-$('.menu-mobile').click(()=>{
-  console.log('teste')
-  $('.show-start').css(({
-    transform:"none"
-  }))
 
-})
 $('.close-start').click(()=>{
   console.log('teste')
   $('.show-start').css(({
