@@ -265,6 +265,7 @@ atualizarCarrinho = () => {
   limpartudo();
 
   items.map((val) => {
+
     if (val.quantidade > 0) {
 
       containerCarrinho.innerHTML += `
@@ -292,9 +293,11 @@ atualizarCarrinho = () => {
       function getTotal(total, item) {
         return total + item.price * item.quantidade;
       }
+      
       valorTotaldosProdutos.innerHTML = `<p style="color:#00da24;"> Valor Total: R$ ${total} </p>`;
       vtotal.innerHTML = ` R$ ${total} `;
     }
+
   });
 };
 
@@ -508,10 +511,15 @@ function entrar() {
 
   if (email.value == userValid.email && senha.value == userValid.senha) {
     LabelEmail.setAttribute("style", "color: #11f511");
+
     email.setAttribute("style", "border-color: #11f511");
+
     LabelSenha.setAttribute("style", "color: #11f511");
+
     senha.setAttribute("style", "border-color: #11f511");
+
     $(".msgsucss").css({ display: "block" });
+    
     $(".msgerro").css({ display: "none" });
 
     setTimeout(() => {

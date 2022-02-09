@@ -288,7 +288,7 @@
 } 
  
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1340px) {
   .logonav{
     width: 159px;
   }
@@ -306,5 +306,20 @@
   .menu-mobile{
     display: none;
   }
+  .finalizar-mobile {
+    display: none;
+  }
 }
 /* a */
+@media only screen and (min-width: 1340px ) {
+  .btn{
+    background: #ff5e00;
+  }
+  .coluns-history{
+    background: black;
+    height: 123vh;
+  }
+  .finalizar-mobile {
+    display: none;
+  }
+}
