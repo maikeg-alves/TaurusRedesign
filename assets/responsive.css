@@ -1,4 +1,4 @@
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 658px) {
     /* home page   */
     ul, li {
       list-style-type: none;
@@ -19,15 +19,33 @@
     .menu-mobile{
       background: none;
       border-style: none;
+      color: rgb(0, 0, 0);
+    }
+    .finalizar-mobile{
+      border: none;
+      border-style: none;
+      background: black;
+    }
+    .icon-bag{
       color: white;
+    }
+    .offcanvas-bottom{
+      right: 0;
+      left: 0;
+      height: 63vh;
+      padding: 10px;
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+      max-height: 100%;
+      border-top: 1px solid rgba(0,0,0,.2);
     }
     .cartmobile {
       top: 12px;
-      left: 304px;
+      left: 332px;
     }
-   .arm img {
-    height: 52vh;
-    position: absolute;
+    .arm img {
+      height: 40vh;
+      position: absolute;
   }
   .circle {
     height: 30vh;
@@ -234,18 +252,16 @@
 @media only screen and  (min-width: 400px) {
   .menulogo {
     display: flex!important;
-    justify-content: center!important;
+    
   }
   .navbar-toggler{
     display: none;
   }
   .cartmobile {
     top: 12px;
-    left: 304px;
+    left: 385px;
   }
-  .btn{
-    background: #f9c300;
-  }
+
   .coluns-history, .page3 {
     display: flex;
     height: 100vh;
@@ -275,9 +291,7 @@
   .logonav{
     width: 159px;
   }
-  .btn{
-    background: #f90000;
-  }
+
   .menulogo {
     display: flex!important;
     justify-content: space-between!important;
@@ -285,16 +299,24 @@
   .menu-mobile{
     display: none;
   }
+    .icon-bag, .cartmobile, .finalizar-mobile{ 
+    display: none;
+  }
 } 
  
 
+<<<<<<< HEAD
 @media only screen and (min-width: 1340px) {
+=======
+@media only screen and (min-width: 1200px) {
+  .icon-bag, .cartmobile, .finalizar-mobile{ 
+    display: none;
+  }
+>>>>>>> 2b144db0346d1afaa85509e890bc01f14b691ecb
   .logonav{
     width: 159px;
   }
-  .btn{
-    background: #f900c3;
-  }
+
   .coluns-history{
     background: black;
     height: 114vh;
